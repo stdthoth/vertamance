@@ -78,7 +78,9 @@ export default function HomeScreen() {
 
   // Newsletter state
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "success" | "error">("idle");
+  const [newsletterStatus, setNewsletterStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,19 +127,20 @@ export default function HomeScreen() {
 
   return (
     <div className="min-h-screen bg-white text-gray-950 font-sans selection:bg-orange-500 selection:text-white dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
-      
       {/* 1. HEADER / NAVBAR */}
       <nav className="sticky top-0 z-40 bg-white/95 dark:bg-gray-950/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-          
           {/* Logo */}
-          <div className="flex items-center" onClick={() => scrollToSection("home")}>
-            <div className="w-12 h-12 bg-[#e55a00] rounded-full flex items-center justify-center cursor-pointer shadow-md shadow-orange-500/10 hover:scale-105 transition-transform duration-200">
-              {/* Styled circular V ribbon logo */}
-              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-none stroke-white" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M25 35 C32 48, 42 62, 50 78 C58 62, 68 48, 75 35" strokeWidth="10" />
-                <path d="M40 35 C44 43, 47 50, 50 58 C53 50, 56 43, 60 35" strokeWidth="6" opacity="0.8" />
-              </svg>
+          <div
+            className="flex items-center"
+            onClick={() => scrollToSection("home")}
+          >
+            <div className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200">
+              <img
+                src="/Vertmance logo.png"
+                alt="Vertmance Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 
@@ -182,11 +185,25 @@ export default function HomeScreen() {
             className="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors focus:outline-none"
             aria-label="Toggle Menu"
           >
-            <svg className="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
               {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -227,18 +244,30 @@ export default function HomeScreen() {
       </nav>
 
       {/* 2. HERO SLIDER SECTION */}
-      <section id="home" className="relative overflow-hidden min-h-[500px] lg:min-h-[550px] flex items-center py-16">
+      <section
+        id="home"
+        className="relative overflow-hidden min-h-[500px] lg:min-h-[550px] flex items-center py-16"
+      >
         {/* Carousel Content Container */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full flex items-center relative z-10">
-          
           {/* Slider Left Arrow */}
           <button
             onClick={handlePrevSlide}
             className="absolute left-2 lg:left-6 p-3 rounded-full text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all hover:scale-110 active:scale-95 focus:outline-none"
             aria-label="Previous Slide"
           >
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
             </svg>
           </button>
 
@@ -255,7 +284,7 @@ export default function HomeScreen() {
                 {slides[currentSlide].description}
               </p>
             </div>
-            
+
             {/* Slider Dots */}
             <div className="flex items-center gap-2 mt-10">
               {slides.map((_, index) => (
@@ -263,7 +292,9 @@ export default function HomeScreen() {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? "w-8 bg-[#e55a00]" : "w-2 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400"
+                    currentSlide === index
+                      ? "w-8 bg-[#e55a00]"
+                      : "w-2 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -277,25 +308,44 @@ export default function HomeScreen() {
             className="absolute right-2 lg:right-6 p-3 rounded-full text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all hover:scale-110 active:scale-95 focus:outline-none"
             aria-label="Next Slide"
           >
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
             </svg>
           </button>
         </div>
       </section>
 
       {/* 3. ABOUT US & CORE PRINCIPLE SECTION */}
-      <section id="about" className="bg-[#f6f5f2] dark:bg-gray-900/50 py-24 transition-colors duration-300">
+      <section
+        id="about"
+        className="bg-[#f6f5f2] dark:bg-gray-900/50 py-24 transition-colors duration-300"
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            
             {/* Left Column: About Us Content */}
             <div className="space-y-6">
               <div className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-950 dark:text-white uppercase">
-                <span className="text-[#e55a00] font-mono tracking-widest mr-1">•••➔</span> About Us
+                <span className="text-[#e55a00] font-mono tracking-widest mr-1">
+                  •••➔
+                </span>{" "}
+                About Us
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-base lg:text-[17px] leading-relaxed font-normal">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex
+                sapien vitae pellentesque sem placerat in id. Placerat in id
+                cursus mi pretium tellus duis. Pretium tellus duis convallis
+                tempus leo eu aenean.
               </p>
               <div className="pt-4">
                 <button
@@ -303,8 +353,18 @@ export default function HomeScreen() {
                   className="inline-flex items-center gap-2 bg-[#e55a00] hover:bg-[#cc5000] text-white px-6 py-3 font-semibold rounded-md shadow-md shadow-orange-500/10 transition-all hover:scale-[1.02] active:scale-95"
                 >
                   Learn more
-                  <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                  <svg
+                    className="w-4.5 h-4.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                    />
                   </svg>
                 </button>
               </div>
@@ -328,29 +388,36 @@ export default function HomeScreen() {
               {/* Core Principle under the image */}
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-950 dark:text-white uppercase">
-                  <span className="text-[#e55a00] font-mono tracking-widest mr-1">•••➔</span> Core Principle
+                  <span className="text-[#e55a00] font-mono tracking-widest mr-1">
+                    •••➔
+                  </span>{" "}
+                  Core Principle
                 </div>
                 <p className="text-gray-700 dark:text-gray-300 text-base lg:text-[17px] leading-relaxed font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque.
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                  Consectetur adipiscing elit quisque faucibus ex sapien vitae.
+                  Ex sapien vitae pellentesque.
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* 4. OUR BUSINESS SECTION */}
-      <section id="business" className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300">
+      <section
+        id="business"
+        className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300"
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-          
           {/* Header */}
           <div className="space-y-4 max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 dark:text-white tracking-tight">
               Our Business
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
-              We operate across multiple industries, creating sustainable value through disciplined management and long-term partnerships.
+              We operate across multiple industries, creating sustainable value
+              through disciplined management and long-term partnerships.
             </p>
           </div>
 
@@ -385,7 +452,7 @@ export default function HomeScreen() {
                       {card.title} Asset
                     </span>
                   </div>
-                  
+
                   {/* Card Content */}
                   <h3 className="text-xl font-bold text-gray-950 dark:text-white mb-4">
                     {card.title}
@@ -405,14 +472,15 @@ export default function HomeScreen() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* 5. WHY CHOOSE US SECTION */}
-      <section id="why-choose-us" className="bg-[#f6f5f2] dark:bg-gray-900/50 py-24 transition-colors duration-300">
+      <section
+        id="why-choose-us"
+        className="bg-[#f6f5f2] dark:bg-gray-900/50 py-24 transition-colors duration-300"
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-          
           {/* Header */}
           <div className="space-y-3 mb-16">
             <span className="text-xs font-extrabold tracking-widest text-[#e55a00] uppercase">
@@ -431,7 +499,12 @@ export default function HomeScreen() {
                 description:
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
-                  <svg className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg
+                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                  >
                     {/* Handdrawn stack of gold coins */}
                     <ellipse cx="12" cy="7" rx="6" ry="3" />
                     <path d="M6 7v3.5c0 1.66 2.69 3 6 3s6-1.34 6-3V7" />
@@ -445,10 +518,23 @@ export default function HomeScreen() {
                 description:
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
-                  <svg className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg
+                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                  >
                     {/* Corporate delivery truck outline */}
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125a1.125 1.125 0 0 0 1.125-1.125V9.75M3.75 12h12.5M2.25 9.75h16.5a1.5 1.5 0 0 1 1.5 1.5v5.625M2 5.25h16.5c.414 0 .75.336.75.75v3" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 9.75V5.25" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125a1.125 1.125 0 0 0 1.125-1.125V9.75M3.75 12h12.5M2.25 9.75h16.5a1.5 1.5 0 0 1 1.5 1.5v5.625M2 5.25h16.5c.414 0 .75.336.75.75v3"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 9.75V5.25"
+                    />
                   </svg>
                 ),
               },
@@ -457,10 +543,23 @@ export default function HomeScreen() {
                 description:
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
-                  <svg className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg
+                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                  >
                     {/* Sprout with cupping leaf details */}
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21V9m0 0a3 3 0 0 1 3-3h1m-4 3a3 3 0 0 0-3-3H9m3 3V5" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 5a3 3 0 0 1 3-3h1m-4 3a3 3 0 0 0-3-3H9" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21V9m0 0a3 3 0 0 1 3-3h1m-4 3a3 3 0 0 0-3-3H9m3 3V5"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 5a3 3 0 0 1 3-3h1m-4 3a3 3 0 0 0-3-3H9"
+                    />
                   </svg>
                 ),
               },
@@ -469,25 +568,41 @@ export default function HomeScreen() {
                 description:
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
-                  <svg className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg
+                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                  >
                     {/* Safety hard hat outline */}
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A1.5 1.5 0 0 0 19.5 21l2-2a1.5 1.5 0 0 0 0-2.25l-5.83-5.83m-4.25 4.25L4.5 13.5A1.5 1.5 0 0 1 4.5 11l2-2a1.5 1.5 0 0 1 2.25 0l3.83 3.83m-1.16 1.16a1.5 1.5 0 1 1-2.12-2.12" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v4m0 0H8m4 0h4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M11.42 15.17L17.25 21A1.5 1.5 0 0 0 19.5 21l2-2a1.5 1.5 0 0 0 0-2.25l-5.83-5.83m-4.25 4.25L4.5 13.5A1.5 1.5 0 0 1 4.5 11l2-2a1.5 1.5 0 0 1 2.25 0l3.83 3.83m-1.16 1.16a1.5 1.5 0 1 1-2.12-2.12"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4v4m0 0H8m4 0h4"
+                    />
                   </svg>
                 ),
               },
             ].map((feature, idx) => (
-              <div key={idx} className="space-y-4 px-2 hover:scale-[1.03] transition-transform duration-200 select-none">
+              <div
+                key={idx}
+                className="space-y-4 px-2 hover:scale-[1.03] transition-transform duration-200 select-none"
+              >
                 {/* Icon Circle */}
                 <div className="w-20 h-20 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto shadow-sm border border-gray-100 dark:border-gray-800 mb-6">
                   {feature.icon}
                 </div>
-                
+
                 {/* Feature Title */}
                 <h3 className="text-[17px] font-extrabold text-gray-950 dark:text-white leading-snug">
                   {feature.title}
                 </h3>
-                
+
                 {/* Feature Description */}
                 <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
                   {feature.description}
@@ -495,17 +610,16 @@ export default function HomeScreen() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* 6. VIDEO / PARALLAX PLACEHOLDER SECTION */}
       <section className="relative w-full h-[320px] sm:h-[420px] bg-gray-200 dark:bg-gray-800 flex items-center justify-center overflow-hidden transition-colors duration-300">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10" />
-        
+
         {/* Animated Ripple Circles */}
         <div className="absolute w-44 h-44 bg-[#e55a00]/10 rounded-full animate-ping pointer-events-none" />
-        
+
         {/* Play Button */}
         <button
           onClick={() => setVideoModalOpen(true)}
@@ -513,7 +627,10 @@ export default function HomeScreen() {
           aria-label="Play Overview Video"
         >
           {/* Inner play triangle */}
-          <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gray-950 group-hover:text-[#e55a00] fill-current translate-x-1 transition-colors" viewBox="0 0 24 24">
+          <svg
+            className="w-8 h-8 sm:w-10 sm:h-10 text-gray-950 group-hover:text-[#e55a00] fill-current translate-x-1 transition-colors"
+            viewBox="0 0 24 24"
+          >
             <path d="M8 5v14l11-7z" />
           </svg>
         </button>
@@ -525,9 +642,11 @@ export default function HomeScreen() {
       </section>
 
       {/* 7. LATEST NEWS / COMPANY NEWS SECTION */}
-      <section id="news" className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300">
+      <section
+        id="news"
+        className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300"
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          
           {/* Header */}
           <div className="text-center space-y-3 mb-16">
             <span className="text-xs font-extrabold tracking-widest text-[#e55a00] uppercase">
@@ -556,7 +675,9 @@ export default function HomeScreen() {
 
                   {/* News Content Paragraph */}
                   <p className="text-gray-600 dark:text-gray-400 text-[13px] leading-relaxed mb-6 font-medium group-hover:text-gray-950 dark:group-hover:text-white transition-colors">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien sem placerat in id cursus mi.Lorem ipsum dolor sit amet consectetur.
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit
+                    quisque faucibus ex sapien sem placerat in id cursus
+                    mi.Lorem ipsum dolor sit amet consectetur.
                   </p>
                 </div>
 
@@ -567,16 +688,13 @@ export default function HomeScreen() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* 8. FOOTER */}
       <footer className="bg-[#14110f] text-gray-400 dark:bg-black py-20 px-6 lg:px-12 border-t border-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16">
-            
             {/* Column 1: Company */}
             <div className="space-y-4">
               <h4 className="text-xs font-bold text-white uppercase tracking-widest">
@@ -584,17 +702,26 @@ export default function HomeScreen() {
               </h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <button onClick={() => scrollToSection("about")} className="hover:text-white transition-colors text-left">
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className="hover:text-white transition-colors text-left"
+                  >
                     About Us
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => scrollToSection("business")} className="hover:text-white transition-colors text-left">
+                  <button
+                    onClick={() => scrollToSection("business")}
+                    className="hover:text-white transition-colors text-left"
+                  >
                     Business
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => scrollToSection("news")} className="hover:text-white transition-colors text-left">
+                  <button
+                    onClick={() => scrollToSection("news")}
+                    className="hover:text-white transition-colors text-left"
+                  >
                     Portfolio
                   </button>
                 </li>
@@ -615,7 +742,10 @@ export default function HomeScreen() {
                   "Nassarawa Commodity",
                 ].map((bus) => (
                   <li key={bus}>
-                    <button onClick={() => setContactModalOpen(true)} className="hover:text-white transition-colors text-left">
+                    <button
+                      onClick={() => setContactModalOpen(true)}
+                      className="hover:text-white transition-colors text-left"
+                    >
                       {bus}
                     </button>
                   </li>
@@ -640,19 +770,25 @@ export default function HomeScreen() {
                 <p>Call: 0814 XXX XXXX, 0913 XXX XXXX</p>
                 <p>
                   Email:{" "}
-                  <a href="mailto:comms@vertmance.com" className="hover:text-white transition-colors">
+                  <a
+                    href="mailto:comms@vertmance.com"
+                    className="hover:text-white transition-colors"
+                  >
                     comms@vertmance.com
                   </a>
                 </p>
               </div>
-              
+
               {/* Social Icons inside circular buttons */}
               <div className="flex items-center gap-3 pt-2">
                 {[
                   {
                     name: "Facebook",
                     icon: (
-                      <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                      <svg
+                        className="w-4.5 h-4.5 fill-current"
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                       </svg>
                     ),
@@ -660,7 +796,10 @@ export default function HomeScreen() {
                   {
                     name: "Twitter",
                     icon: (
-                      <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                      <svg
+                        className="w-4.5 h-4.5 fill-current"
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                       </svg>
                     ),
@@ -668,8 +807,21 @@ export default function HomeScreen() {
                   {
                     name: "Instagram",
                     icon: (
-                      <svg className="w-4.5 h-4.5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <svg
+                        className="w-4.5 h-4.5 fill-none stroke-current"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        viewBox="0 0 24 24"
+                      >
+                        <rect
+                          x="2"
+                          y="2"
+                          width="20"
+                          height="20"
+                          rx="5"
+                          ry="5"
+                        />
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                       </svg>
@@ -695,7 +847,7 @@ export default function HomeScreen() {
               <p className="text-sm leading-relaxed text-gray-400">
                 Join our weekly mailing lists
               </p>
-              
+
               {/* Form Input with inside action button */}
               <form onSubmit={handleNewsletterSubmit} className="relative mt-2">
                 <input
@@ -711,8 +863,18 @@ export default function HomeScreen() {
                   className="absolute right-1 top-1 bottom-1 w-10 bg-white/10 hover:bg-[#e55a00] text-white hover:text-white flex items-center justify-center rounded-sm transition-all focus:outline-none"
                   aria-label="Subscribe"
                 >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                    />
                   </svg>
                 </button>
               </form>
@@ -729,12 +891,10 @@ export default function HomeScreen() {
                 </p>
               )}
             </div>
-
           </div>
 
           {/* Divider line */}
           <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            
             {/* Copyright */}
             <div className="text-xs font-semibold text-gray-500">
               © 2026 All Rights Reserved
@@ -742,15 +902,19 @@ export default function HomeScreen() {
 
             {/* Bottom Links */}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-gray-500">
-              {["Legal", "Privacy", "Site Map", "Terms & Condition"].map((item) => (
-                <button key={item} onClick={() => setContactModalOpen(true)} className="hover:text-white transition-colors">
-                  {item}
-                </button>
-              ))}
+              {["Legal", "Privacy", "Site Map", "Terms & Condition"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    onClick={() => setContactModalOpen(true)}
+                    className="hover:text-white transition-colors"
+                  >
+                    {item}
+                  </button>
+                ),
+              )}
             </div>
-
           </div>
-
         </div>
       </footer>
 
@@ -758,15 +922,24 @@ export default function HomeScreen() {
       {videoModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
           <div className="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-4xl overflow-hidden relative shadow-2xl">
-            
             {/* Close button */}
             <button
               onClick={() => setVideoModalOpen(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/60 hover:bg-black text-white rounded-full flex items-center justify-center transition-colors focus:outline-none"
               aria-label="Close Video"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
@@ -774,13 +947,20 @@ export default function HomeScreen() {
             <div className="aspect-video w-full bg-black relative flex items-center justify-center">
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center space-y-4">
                 <div className="w-16 h-16 bg-[#e55a00] rounded-full flex items-center justify-center animate-pulse">
-                  <svg className="w-8 h-8 text-white fill-current" viewBox="0 0 24 24">
+                  <svg
+                    className="w-8 h-8 text-white fill-current"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white">Vertamance Corporate Reel 2026</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Vertamance Corporate Reel 2026
+                </h3>
                 <p className="text-sm text-gray-400 max-w-md">
-                  A visual summary showcasing our concepts, purpose-built models, sustainable crop operations, and high-quality construction.
+                  A visual summary showcasing our concepts, purpose-built
+                  models, sustainable crop operations, and high-quality
+                  construction.
                 </p>
                 <div className="pt-4 flex items-center gap-4 text-xs font-semibold text-gray-500">
                   <span>Progress: 0:42 / 3:15</span>
@@ -791,7 +971,6 @@ export default function HomeScreen() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       )}
@@ -800,15 +979,24 @@ export default function HomeScreen() {
       {contactModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn">
           <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl w-full max-w-lg overflow-hidden relative shadow-2xl p-8 space-y-6">
-            
             {/* Close button */}
             <button
               onClick={() => setContactModalOpen(false)}
               className="absolute top-4 right-4 w-9 h-9 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full flex items-center justify-center transition-colors focus:outline-none"
               aria-label="Close Modal"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
@@ -818,7 +1006,8 @@ export default function HomeScreen() {
                 Get In Touch
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Let us know what you have in mind. We are here to support your journey.
+                Let us know what you have in mind. We are here to support your
+                journey.
               </p>
             </div>
 
@@ -826,13 +1015,26 @@ export default function HomeScreen() {
             {contactSubmitted ? (
               <div className="py-12 flex flex-col items-center justify-center space-y-4 animate-scaleUp">
                 <div className="w-16 h-16 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center">
-                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  <svg
+                    className="w-10 h-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                 </div>
-                <h4 className="text-lg font-bold text-gray-950 dark:text-white">Message Transmitted!</h4>
+                <h4 className="text-lg font-bold text-gray-950 dark:text-white">
+                  Message Transmitted!
+                </h4>
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  We have received your request. An engineering/consultancy expert will respond shortly.
+                  We have received your request. An engineering/consultancy
+                  expert will respond shortly.
                 </p>
               </div>
             ) : (
@@ -840,23 +1042,34 @@ export default function HomeScreen() {
               <form onSubmit={handleContactSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">Your Name</label>
+                    <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                      Your Name
+                    </label>
                     <input
                       type="text"
                       required
                       value={contactData.name}
-                      onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
+                      onChange={(e) =>
+                        setContactData({ ...contactData, name: e.target.value })
+                      }
                       placeholder="Jane Doe"
                       className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white"
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">Email Address</label>
+                    <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                      Email Address
+                    </label>
                     <input
                       type="email"
                       required
                       value={contactData.email}
-                      onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                      onChange={(e) =>
+                        setContactData({
+                          ...contactData,
+                          email: e.target.value,
+                        })
+                      }
                       placeholder="jane@example.com"
                       className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white"
                     />
@@ -864,23 +1077,37 @@ export default function HomeScreen() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">Subject</label>
+                  <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                    Subject
+                  </label>
                   <input
                     type="text"
                     value={contactData.subject}
-                    onChange={(e) => setContactData({ ...contactData, subject: e.target.value })}
+                    onChange={(e) =>
+                      setContactData({
+                        ...contactData,
+                        subject: e.target.value,
+                      })
+                    }
                     placeholder="E.g., Business Collaboration"
                     className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">Your Message</label>
+                  <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                    Your Message
+                  </label>
                   <textarea
                     required
                     rows={4}
                     value={contactData.message}
-                    onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
+                    onChange={(e) =>
+                      setContactData({
+                        ...contactData,
+                        message: e.target.value,
+                      })
+                    }
                     placeholder="Tell us about your project scope or general inquiries..."
                     className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white resize-none"
                   />
@@ -894,11 +1121,9 @@ export default function HomeScreen() {
                 </button>
               </form>
             )}
-
           </div>
         </div>
       )}
-
     </div>
   );
 }
