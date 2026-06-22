@@ -1,13 +1,13 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import HomeScreen from "../components/HomeScreen";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Vertamance - From Concept to Delivery. We Build With Purpose." },
+    { name: "description", content: "We operate across multiple industries, creating sustainable value through disciplined management and long-term partnerships." },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <HomeScreen />;
 }
