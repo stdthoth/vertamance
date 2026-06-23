@@ -126,9 +126,9 @@ export default function HomeScreen() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-gray-950 font-sans selection:bg-orange-500 selection:text-white dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+    <div className="min-h-screen bg-white text-gray-950 font-sans selection:bg-orange-500 selection:text-white transition-colors duration-300">
       {/* 1. HEADER / NAVBAR */}
-      <nav className="sticky top-0 z-40 bg-white/95 dark:bg-gray-950/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-900 transition-colors duration-300">
+      <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           {/* Logo */}
           <div
@@ -157,8 +157,8 @@ export default function HomeScreen() {
                 onClick={() => scrollToSection(link.id)}
                 className={`text-sm tracking-wide transition-all duration-200 relative py-2 ${
                   activeSection === link.id
-                    ? "font-bold text-gray-900 dark:text-white"
-                    : "font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                    ? "font-bold text-gray-900"
+                    : "font-medium text-gray-500 hover:text-gray-900"
                 }`}
               >
                 {link.label}
@@ -173,7 +173,7 @@ export default function HomeScreen() {
           <div className="hidden md:block">
             <button
               onClick={() => setContactModalOpen(true)}
-              className="bg-black hover:bg-gray-800 text-white dark:bg-white dark:hover:bg-gray-200 dark:text-black px-6 py-2.5 rounded-sm text-sm font-semibold tracking-wide transition-all duration-200 hover:shadow-lg active:scale-95"
+              className="bg-black hover:bg-gray-800 text-white px-6 py-2.5 rounded-sm text-sm font-semibold tracking-wide transition-all duration-200 hover:shadow-lg active:scale-95"
             >
               Contact Us
             </button>
@@ -182,7 +182,7 @@ export default function HomeScreen() {
           {/* Mobile hamburger menu toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors focus:outline-none"
+            className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors focus:outline-none"
             aria-label="Toggle Menu"
           >
             <svg
@@ -211,7 +211,7 @@ export default function HomeScreen() {
 
         {/* Mobile Navigation Panel */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-100 dark:border-gray-900 bg-white dark:bg-gray-950 px-6 py-4 space-y-3 transition-colors duration-300 animate-fadeIn">
+          <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3 transition-colors duration-300 animate-fadeIn">
             {[
               { id: "home", label: "Home" },
               { id: "about", label: "About Us" },
@@ -223,8 +223,8 @@ export default function HomeScreen() {
                 onClick={() => scrollToSection(link.id)}
                 className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
                   activeSection === link.id
-                    ? "font-bold bg-orange-50 dark:bg-orange-950/20 text-[#e55a00]"
-                    : "font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-900"
+                    ? "font-bold bg-orange-50 text-[#e55a00]"
+                    : "font-medium text-gray-600 hover:bg-gray-50"
                 }`}
               >
                 {link.label}
@@ -235,7 +235,7 @@ export default function HomeScreen() {
                 setMobileMenuOpen(false);
                 setContactModalOpen(true);
               }}
-              className="w-full mt-4 bg-black hover:bg-gray-800 text-white dark:bg-white dark:hover:bg-gray-200 dark:text-black py-3 rounded-md text-sm font-semibold tracking-wide transition-colors"
+              className="w-full mt-4 bg-black hover:bg-gray-800 text-white py-3 rounded-md text-sm font-semibold tracking-wide transition-colors"
             >
               Contact Us
             </button>
@@ -253,7 +253,7 @@ export default function HomeScreen() {
           {/* Slider Left Arrow */}
           <button
             onClick={handlePrevSlide}
-            className="absolute left-2 lg:left-6 p-3 rounded-full text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all hover:scale-110 active:scale-95 focus:outline-none"
+            className="absolute left-2 lg:left-6 p-3 rounded-full text-gray-400 hover:text-gray-900 transition-all hover:scale-110 active:scale-95 focus:outline-none"
             aria-label="Previous Slide"
           >
             <svg
@@ -274,13 +274,13 @@ export default function HomeScreen() {
           {/* Active Slide Text Content */}
           <div className="max-w-4xl mx-auto px-10 lg:px-20 w-full transition-all duration-500 ease-in-out transform">
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-gray-950 dark:text-white leading-[1.1] animate-slideUp">
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-gray-950 leading-[1.1] animate-slideUp">
                 {slides[currentSlide].title1}
               </h1>
               <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-[#e55a00] leading-[1.1] animate-slideUp">
                 {slides[currentSlide].title2}
               </h2>
-              <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl pt-4 font-normal animate-fadeIn">
+              <p className="text-gray-500 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl pt-4 font-normal animate-fadeIn">
                 {slides[currentSlide].description}
               </p>
             </div>
@@ -294,7 +294,7 @@ export default function HomeScreen() {
                   className={`h-2 rounded-full transition-all duration-300 ${
                     currentSlide === index
                       ? "w-8 bg-[#e55a00]"
-                      : "w-2 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400"
+                      : "w-2 bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -305,7 +305,7 @@ export default function HomeScreen() {
           {/* Slider Right Arrow */}
           <button
             onClick={handleNextSlide}
-            className="absolute right-2 lg:right-6 p-3 rounded-full text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all hover:scale-110 active:scale-95 focus:outline-none"
+            className="absolute right-2 lg:right-6 p-3 rounded-full text-gray-400 hover:text-gray-900 transition-all hover:scale-110 active:scale-95 focus:outline-none"
             aria-label="Next Slide"
           >
             <svg
@@ -328,19 +328,19 @@ export default function HomeScreen() {
       {/* 3. ABOUT US & CORE PRINCIPLE SECTION */}
       <section
         id="about"
-        className="bg-[#f6f5f2] dark:bg-gray-900/50 py-24 transition-colors duration-300"
+        className="bg-[#f6f5f2] py-24 transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             {/* Left Column: About Us Content */}
             <div className="space-y-6">
-              <div className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-950 dark:text-white uppercase">
+              <div className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-950 uppercase">
                 <span className="text-[#e55a00] font-mono tracking-widest mr-1">
                   •••➔
                 </span>{" "}
                 About Us
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-base lg:text-[17px] leading-relaxed font-normal">
+              <p className="text-gray-700 text-base lg:text-[17px] leading-relaxed font-normal">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit.
                 Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex
                 sapien vitae pellentesque sem placerat in id. Placerat in id
@@ -373,27 +373,27 @@ export default function HomeScreen() {
             {/* Right Column: Image Placeholder & Core Principle */}
             <div className="space-y-12">
               {/* Image Placeholder */}
-              <div className="w-full h-80 sm:h-96 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center relative overflow-hidden group shadow-md shadow-gray-200/5 dark:shadow-none">
-                <div className="absolute inset-0 bg-gradient-to-tr from-gray-300/40 to-transparent dark:from-gray-950/20" />
-                <span className="text-gray-400 dark:text-gray-600 font-semibold tracking-wider uppercase text-sm z-10 select-none group-hover:scale-105 transition-transform duration-300">
+              <div className="w-full h-80 sm:h-96 bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden group shadow-md shadow-gray-200/5">
+                <div className="absolute inset-0 bg-gradient-to-tr from-gray-300/40 to-transparent" />
+                <span className="text-gray-400 font-semibold tracking-wider uppercase text-sm z-10 select-none group-hover:scale-105 transition-transform duration-300">
                   Corporate Overview Image
                 </span>
                 {/* Visual decoration corners to make placeholder look premium */}
-                <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-gray-300 dark:border-gray-700" />
-                <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-gray-300 dark:border-gray-700" />
-                <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-gray-300 dark:border-gray-700" />
-                <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-gray-300 dark:border-gray-700" />
+                <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-gray-300" />
+                <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-gray-300" />
+                <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-gray-300" />
+                <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-gray-300" />
               </div>
 
               {/* Core Principle under the image */}
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-950 dark:text-white uppercase">
+                <div className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-950 uppercase">
                   <span className="text-[#e55a00] font-mono tracking-widest mr-1">
                     •••➔
                   </span>{" "}
                   Core Principle
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 text-base lg:text-[17px] leading-relaxed font-normal">
+                <p className="text-gray-700 text-base lg:text-[17px] leading-relaxed font-normal">
                   Lorem ipsum dolor sit amet consectetur adipiscing elit.
                   Consectetur adipiscing elit quisque faucibus ex sapien vitae.
                   Ex sapien vitae pellentesque.
@@ -407,15 +407,15 @@ export default function HomeScreen() {
       {/* 4. OUR BUSINESS SECTION */}
       <section
         id="business"
-        className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300"
+        className="bg-white py-24 transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           {/* Header */}
           <div className="space-y-4 max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 tracking-tight">
               Our Business
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
               We operate across multiple industries, creating sustainable value
               through disciplined management and long-term partnerships.
             </p>
@@ -442,22 +442,22 @@ export default function HomeScreen() {
             ].map((card, idx) => (
               <div
                 key={idx}
-                className="bg-white dark:bg-gray-900 border border-gray-200/70 dark:border-gray-800 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-white border border-gray-200/70 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
                   {/* Card Image Placeholder */}
-                  <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/50 to-transparent dark:from-gray-950/20" />
-                    <span className="text-gray-400 dark:text-gray-500 font-semibold tracking-wider uppercase text-xs select-none">
+                  <div className="w-full h-48 bg-gray-100 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/50 to-transparent" />
+                    <span className="text-gray-400 font-semibold tracking-wider uppercase text-xs select-none">
                       {card.title} Asset
                     </span>
                   </div>
 
                   {/* Card Content */}
-                  <h3 className="text-xl font-bold text-gray-950 dark:text-white mb-4">
+                  <h3 className="text-xl font-bold text-gray-950 mb-4">
                     {card.title}
                   </h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 max-w-sm mx-auto">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-sm mx-auto">
                     {card.description}
                   </p>
                 </div>
@@ -478,7 +478,7 @@ export default function HomeScreen() {
       {/* 5. WHY CHOOSE US SECTION */}
       <section
         id="why-choose-us"
-        className="bg-[#f6f5f2] dark:bg-gray-900/50 py-24 transition-colors duration-300"
+        className="bg-[#f6f5f2] py-24 transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           {/* Header */}
@@ -486,7 +486,7 @@ export default function HomeScreen() {
             <span className="text-xs font-extrabold tracking-widest text-[#e55a00] uppercase">
               Why Choose Us
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 dark:text-white tracking-tight max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight max-w-3xl mx-auto">
               ONE GROUP. MULTIPLE SOLUTIONS. PROVEN IMPACT.
             </h2>
           </div>
@@ -500,7 +500,7 @@ export default function HomeScreen() {
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
                   <svg
-                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    className="w-12 h-12 text-gray-950 mx-auto stroke-current"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
@@ -519,7 +519,7 @@ export default function HomeScreen() {
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
                   <svg
-                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    className="w-12 h-12 text-gray-950 mx-auto stroke-current"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
@@ -544,7 +544,7 @@ export default function HomeScreen() {
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
                   <svg
-                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    className="w-12 h-12 text-gray-950 mx-auto stroke-current"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
@@ -569,7 +569,7 @@ export default function HomeScreen() {
                   "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
                 icon: (
                   <svg
-                    className="w-12 h-12 text-gray-950 dark:text-white mx-auto stroke-current"
+                    className="w-12 h-12 text-gray-950 mx-auto stroke-current"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
@@ -594,17 +594,17 @@ export default function HomeScreen() {
                 className="space-y-4 px-2 hover:scale-[1.03] transition-transform duration-200 select-none"
               >
                 {/* Icon Circle */}
-                <div className="w-20 h-20 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto shadow-sm border border-gray-100 dark:border-gray-800 mb-6">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm border border-gray-100 mb-6">
                   {feature.icon}
                 </div>
 
                 {/* Feature Title */}
-                <h3 className="text-[17px] font-extrabold text-gray-950 dark:text-white leading-snug">
+                <h3 className="text-[17px] font-extrabold text-gray-950 leading-snug">
                   {feature.title}
                 </h3>
 
                 {/* Feature Description */}
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
+                <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">
                   {feature.description}
                 </p>
               </div>
@@ -614,7 +614,7 @@ export default function HomeScreen() {
       </section>
 
       {/* 6. VIDEO / PARALLAX PLACEHOLDER SECTION */}
-      <section className="relative w-full h-[320px] sm:h-[420px] bg-gray-200 dark:bg-gray-800 flex items-center justify-center overflow-hidden transition-colors duration-300">
+      <section className="relative w-full h-[320px] sm:h-[420px] bg-gray-200 flex items-center justify-center overflow-hidden transition-colors duration-300">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10" />
 
         {/* Animated Ripple Circles */}
@@ -644,7 +644,7 @@ export default function HomeScreen() {
       {/* 7. LATEST NEWS / COMPANY NEWS SECTION */}
       <section
         id="news"
-        className="bg-white dark:bg-gray-950 py-24 transition-colors duration-300"
+        className="bg-white py-24 transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Header */}
@@ -652,7 +652,7 @@ export default function HomeScreen() {
             <span className="text-xs font-extrabold tracking-widest text-[#e55a00] uppercase">
               Latest News
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 tracking-tight">
               Company News
             </h2>
           </div>
@@ -662,19 +662,19 @@ export default function HomeScreen() {
             {[1, 2, 3, 4].map((item) => (
               <div
                 key={item}
-                className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-gray-200/50 dark:hover:border-gray-700 transition-all duration-200 group"
+                className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-gray-200/50 transition-all duration-200 group"
               >
                 <div>
                   {/* News Image placeholder */}
-                  <div className="w-full h-40 bg-gray-100 dark:bg-gray-800 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/30 to-transparent dark:from-gray-950/10" />
-                    <span className="text-gray-400 dark:text-gray-500 text-[10px] uppercase font-bold tracking-widest">
+                  <div className="w-full h-40 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/30 to-transparent" />
+                    <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">
                       News Image Thumbnail
                     </span>
                   </div>
 
                   {/* News Content Paragraph */}
-                  <p className="text-gray-600 dark:text-gray-400 text-[13px] leading-relaxed mb-6 font-medium group-hover:text-gray-950 dark:group-hover:text-white transition-colors">
+                  <p className="text-gray-600 text-[13px] leading-relaxed mb-6 font-medium group-hover:text-gray-950 transition-colors">
                     Lorem ipsum dolor sit amet consectetur adipiscing elit
                     quisque faucibus ex sapien sem placerat in id cursus
                     mi.Lorem ipsum dolor sit amet consectetur.
@@ -682,7 +682,7 @@ export default function HomeScreen() {
                 </div>
 
                 {/* News Date in Bottom Right */}
-                <span className="text-[11px] font-semibold text-gray-400 dark:text-gray-500 self-end">
+                <span className="text-[11px] font-semibold text-gray-400 self-end">
                   11 Feb, 2026
                 </span>
               </div>
@@ -692,7 +692,7 @@ export default function HomeScreen() {
       </section>
 
       {/* 8. FOOTER */}
-      <footer className="bg-[#14110f] text-gray-400 dark:bg-black py-20 px-6 lg:px-12 border-t border-gray-900 transition-colors duration-300">
+      <footer className="bg-[#14110f] text-gray-400 py-20 px-6 lg:px-12 border-t border-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16">
             {/* Column 1: Company */}
@@ -921,7 +921,7 @@ export default function HomeScreen() {
       {/* 9. VIDEO PLAYBACK LIGHTBOX MODAL */}
       {videoModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-4xl overflow-hidden relative shadow-2xl">
+          <div className="bg-white border border-gray-100 rounded-2xl w-full max-w-4xl overflow-hidden relative shadow-2xl">
             {/* Close button */}
             <button
               onClick={() => setVideoModalOpen(false)}
@@ -955,7 +955,7 @@ export default function HomeScreen() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-white">
-                  Vertamance Corporate Reel 2026
+                  Vertmance Corporate Reel 2026
                 </h3>
                 <p className="text-sm text-gray-400 max-w-md">
                   A visual summary showcasing our concepts, purpose-built
@@ -978,11 +978,11 @@ export default function HomeScreen() {
       {/* 10. CONTACT US OVERLAY MODAL */}
       {contactModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl w-full max-w-lg overflow-hidden relative shadow-2xl p-8 space-y-6">
+          <div className="bg-white border border-gray-100 rounded-2xl w-full max-w-lg overflow-hidden relative shadow-2xl p-8 space-y-6">
             {/* Close button */}
             <button
               onClick={() => setContactModalOpen(false)}
-              className="absolute top-4 right-4 w-9 h-9 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full flex items-center justify-center transition-colors focus:outline-none"
+              className="absolute top-4 right-4 w-9 h-9 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full flex items-center justify-center transition-colors focus:outline-none"
               aria-label="Close Modal"
             >
               <svg
@@ -1002,10 +1002,10 @@ export default function HomeScreen() {
 
             {/* Modal Header */}
             <div className="space-y-1">
-              <h3 className="text-2xl font-extrabold text-gray-950 dark:text-white">
+              <h3 className="text-2xl font-extrabold text-gray-950">
                 Get In Touch
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-gray-500">
                 Let us know what you have in mind. We are here to support your
                 journey.
               </p>
@@ -1029,10 +1029,10 @@ export default function HomeScreen() {
                     />
                   </svg>
                 </div>
-                <h4 className="text-lg font-bold text-gray-950 dark:text-white">
+                <h4 className="text-lg font-bold text-gray-950">
                   Message Transmitted!
                 </h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+                <p className="text-sm text-gray-500 text-center">
                   We have received your request. An engineering/consultancy
                   expert will respond shortly.
                 </p>
@@ -1042,7 +1042,7 @@ export default function HomeScreen() {
               <form onSubmit={handleContactSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                    <label className="text-xs font-bold text-gray-600 uppercase">
                       Your Name
                     </label>
                     <input
@@ -1053,11 +1053,11 @@ export default function HomeScreen() {
                         setContactData({ ...contactData, name: e.target.value })
                       }
                       placeholder="Jane Doe"
-                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] text-gray-950"
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                    <label className="text-xs font-bold text-gray-600 uppercase">
                       Email Address
                     </label>
                     <input
@@ -1071,13 +1071,13 @@ export default function HomeScreen() {
                         })
                       }
                       placeholder="jane@example.com"
-                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] text-gray-950"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                  <label className="text-xs font-bold text-gray-600 uppercase">
                     Subject
                   </label>
                   <input
@@ -1090,12 +1090,12 @@ export default function HomeScreen() {
                       })
                     }
                     placeholder="E.g., Business Collaboration"
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] text-gray-950"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                  <label className="text-xs font-bold text-gray-600 uppercase">
                     Your Message
                   </label>
                   <textarea
@@ -1109,7 +1109,7 @@ export default function HomeScreen() {
                       })
                     }
                     placeholder="Tell us about your project scope or general inquiries..."
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] dark:text-white resize-none"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-[#e55a00] text-gray-950 resize-none"
                   />
                 </div>
 
