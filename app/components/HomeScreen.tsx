@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router";
 
 // Types for components
 interface Slide {
@@ -463,12 +464,21 @@ export default function HomeScreen() {
                 </div>
 
                 {/* Card Button */}
-                <button
-                  onClick={() => setContactModalOpen(true)}
-                  className="bg-[#e55a00] hover:bg-[#cc5000] text-white px-8 py-2.5 rounded-md font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 w-fit mx-auto shadow-md shadow-orange-500/5"
-                >
-                  Read More
-                </button>
+                {card.title === "Food & Hospitality" ? (
+                  <Link
+                    to="/food-hospitality"
+                    className="bg-[#e55a00] hover:bg-[#cc5000] text-white px-8 py-2.5 rounded-md font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 w-fit mx-auto shadow-md shadow-orange-500/5 block text-center cursor-pointer"
+                  >
+                    Read More
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => setContactModalOpen(true)}
+                    className="bg-[#e55a00] hover:bg-[#cc5000] text-white px-8 py-2.5 rounded-md font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 w-fit mx-auto shadow-md shadow-orange-500/5 cursor-pointer"
+                  >
+                    Read More
+                  </button>
+                )}
               </div>
             ))}
           </div>
