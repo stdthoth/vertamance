@@ -531,7 +531,7 @@ export default function HomeScreen() {
                   <svg
                     className="w-12 h-12 text-gray-950 mx-auto stroke-current"
                     fill="none"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 24 24" /** */
                     strokeWidth="1.5"
                   >
                     {/* Corporate delivery truck outline */}
