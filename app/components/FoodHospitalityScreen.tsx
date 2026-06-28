@@ -78,7 +78,7 @@ export default function FoodHospitalityScreen() {
               Home
             </Link>
             <a
-              href="/#about"
+              href="/about-us"
               className="text-sm tracking-wide font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 py-2"
             >
               About Us
@@ -91,7 +91,7 @@ export default function FoodHospitalityScreen() {
               <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
             </a>
             <a
-              href="/#news"
+              href="/portfolio"
               className="text-sm tracking-wide font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 py-2"
             >
               Portfolio
@@ -148,7 +148,7 @@ export default function FoodHospitalityScreen() {
               Home
             </Link>
             <a
-              href="/#about"
+              href="/about-us"
               className="block w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
             >
               About Us
@@ -160,7 +160,7 @@ export default function FoodHospitalityScreen() {
               Business
             </a>
             <a
-              href="/#news"
+              href="/portfolio"
               className="block w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
             >
               Portfolio
@@ -778,7 +778,7 @@ export default function FoodHospitalityScreen() {
                 </li>
                 <li>
                   <a
-                    href="/#about"
+                    href="/about-us"
                     className="hover:text-white transition-colors text-left block"
                   >
                     About Us
@@ -794,7 +794,7 @@ export default function FoodHospitalityScreen() {
                 </li>
                 <li>
                   <a
-                    href="/#news"
+                    href="/portfolio"
                     className="hover:text-white transition-colors text-left block"
                   >
                     Portfolio

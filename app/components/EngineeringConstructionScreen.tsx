@@ -9,7 +9,10 @@ type FeaturedProject = {
 const featuredProjects: FeaturedProject[] = [
   { title: "Urban Infrastructure", label: "Transit corridors and civic works" },
   { title: "Industrial Plants", label: "Heavy-duty delivery environments" },
-  { title: "Residential Development", label: "High-quality living communities" },
+  {
+    title: "Residential Development",
+    label: "High-quality living communities",
+  },
   { title: "Commercial Towers", label: "Mixed-use vertical construction" },
   { title: "Water Systems", label: "Utility upgrades and resilience" },
 ];
@@ -53,9 +56,9 @@ const trustPoints = [
 ];
 
 const footerLinks = [
-  { label: "About Us", href: "/#about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Business", href: "/#business" },
-  { label: "Portfolio", href: "/#news" },
+  { label: "Portfolio", href: "/portfolio" },
 ];
 
 export default function EngineeringConstructionScreen() {
@@ -116,8 +119,7 @@ export default function EngineeringConstructionScreen() {
             </Link>
             <a
               className="text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
-              href="/#about"
-            >
+              href="/about-us">
               About Us
             </a>
             <a
@@ -128,7 +130,7 @@ export default function EngineeringConstructionScreen() {
             </a>
             <a
               className="text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
-              href="/#news"
+              href="/portfolio"
             >
               Portfolio
             </a>
@@ -178,7 +180,7 @@ export default function EngineeringConstructionScreen() {
                 Home
               </Link>
               <a
-                href="/#about"
+                href="/about-us"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
               >
                 About Us
@@ -190,7 +192,7 @@ export default function EngineeringConstructionScreen() {
                 Business
               </a>
               <a
-                href="/#news"
+                href="/portfolio"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
               >
                 Portfolio
@@ -215,12 +217,14 @@ export default function EngineeringConstructionScreen() {
             <div className="pt-4 lg:pt-12">
               <h1 className="max-w-3xl text-[2.45rem] font-black leading-[0.96] tracking-[-0.06em] text-[#121110] sm:text-[3.4rem] lg:text-[4.1rem]">
                 Vertmance Engineering &amp; Construction:{" "}
-                <span className="text-[#d97706]">Delivering Real-World Impact</span>
+                <span className="text-[#d97706]">
+                  Delivering Real-World Impact
+                </span>
               </h1>
               <p className="mt-5 max-w-[36rem] text-[0.78rem] leading-6 text-[#7b756d] sm:text-sm">
                 From planning and technical coordination to site delivery and
-                handover, we build with a disciplined process that turns
-                design intent into durable results.
+                handover, we build with a disciplined process that turns design
+                intent into durable results.
               </p>
             </div>
 
@@ -400,7 +404,10 @@ export default function EngineeringConstructionScreen() {
               <ul className="mt-5 space-y-3 text-sm">
                 {footerLinks.map((item) => (
                   <li key={item.label}>
-                    <a className="transition-colors hover:text-white" href={item.href}>
+                    <a
+                      className="transition-colors hover:text-white"
+                      href={item.href}
+                    >
                       {item.label}
                     </a>
                   </li>

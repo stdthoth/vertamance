@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 
 // Types for components
@@ -95,6 +95,13 @@ export default function HomeScreen() {
     }
   };
 
+  const navItems = [
+    { kind: "scroll" as const, id: "home", label: "Home" },
+    { kind: "route" as const, to: "/about-us", label: "About Us" },
+    { kind: "scroll" as const, id: "business", label: "Business" },
+    { kind: "route" as const, to: "/portfolio", label: "Portfolio" },
+  ];
+
   // Smooth scroll helper
   const scrollToSection = (id: string) => {
     setActiveSection(id);
@@ -147,27 +154,32 @@ export default function HomeScreen() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-10">
-            {[
-              { id: "home", label: "Home" },
-              { id: "about", label: "About Us" },
-              { id: "business", label: "Business" },
-              { id: "news", label: "Portfolio" }, // Portfolio acts as a bridge to bottom segments
-            ].map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className={`text-sm tracking-wide transition-all duration-200 relative py-2 ${
-                  activeSection === link.id
-                    ? "font-bold text-gray-900"
-                    : "font-medium text-gray-500 hover:text-gray-900"
-                }`}
-              >
-                {link.label}
-                {activeSection === link.id && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
-                )}
-              </button>
-            ))}
+            {navItems.map((link) =>
+              link.kind === "route" ? (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className="text-sm tracking-wide font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 py-2"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`text-sm tracking-wide transition-all duration-200 relative py-2 ${
+                    activeSection === link.id
+                      ? "font-bold text-gray-900"
+                      : "font-medium text-gray-500 hover:text-gray-900"
+                  }`}
+                >
+                  {link.label}
+                  {activeSection === link.id && (
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
+                  )}
+                </button>
+              ),
+            )}
           </div>
 
           {/* Contact Us button */}
@@ -213,24 +225,30 @@ export default function HomeScreen() {
         {/* Mobile Navigation Panel */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3 transition-colors duration-300 animate-fadeIn">
-            {[
-              { id: "home", label: "Home" },
-              { id: "about", label: "About Us" },
-              { id: "business", label: "Business" },
-              { id: "news", label: "Portfolio" },
-            ].map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
-                  activeSection === link.id
-                    ? "font-bold bg-orange-50 text-[#e55a00]"
-                    : "font-medium text-gray-600 hover:bg-gray-50"
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
+            {navItems.map((link) =>
+              link.kind === "route" ? (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
+                    activeSection === link.id
+                      ? "font-bold bg-orange-50 text-[#e55a00]"
+                      : "font-medium text-gray-600 hover:bg-gray-50"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ),
+            )}
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
@@ -719,12 +737,12 @@ export default function HomeScreen() {
               </h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <button
-                    onClick={() => scrollToSection("about")}
+                  <Link
+                    to="/about-us"
                     className="hover:text-white transition-colors text-left"
                   >
                     About Us
-                  </button>
+                  </Link>
                 </li>
                 <li>
                   <button
@@ -734,14 +752,14 @@ export default function HomeScreen() {
                     Business
                   </button>
                 </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("news")}
+              <li>
+                  <Link
+                    to="/portfolio"
                     className="hover:text-white transition-colors text-left"
                   >
                     Portfolio
-                  </button>
-                </li>
+                  </Link>
+              </li>
               </ul>
             </div>
 
