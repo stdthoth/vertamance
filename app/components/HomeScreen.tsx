@@ -471,17 +471,9 @@ export default function HomeScreen() {
                   >
                     Read More
                   </Link>
-                ) : (
-                  <button
-                    onClick={() => setContactModalOpen(true)}
-                    className="bg-[#e55a00] hover:bg-[#cc5000] text-white px-8 py-2.5 rounded-md font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 w-fit mx-auto shadow-md shadow-orange-500/5 cursor-pointer"
-                  >
-                    Read More
-                  </button>
-                )}
-{card.title === "Engineering & Construction" ? (
+                ) : card.title === "Food & Hospitality" ? (
                   <Link
-                    to="/engineering-construction"
+                    to="/food-hospitality"
                     className="bg-[#e55a00] hover:bg-[#cc5000] text-white px-8 py-2.5 rounded-md font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 w-fit mx-auto shadow-md shadow-orange-500/5 block text-center cursor-pointer"
                   >
                     Read More
