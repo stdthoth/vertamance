@@ -2,31 +2,52 @@ import { Link } from "react-router";
 import { useEffect, useState } from "react";
 
 const leadership = [
-  { name: "Oluwagbemi Michael, FMVR", role: "President & Chief Executive Officer" },
-  { name: "Damilola Agboola", role: "CFO / Treasurer" },
-  { name: "Suleiman Olawale", role: "Chief of Staff" },
-  { name: "Peace James", role: "Group General Manager" },
-  { name: "Aramide Olugbenga Wyse", role: "Group Human Resource" },
-  { name: "Engr Wale", role: "President & Chief Executive" },
+  {
+    name: "Oluwagbemi Michael, FMVR",
+    role: "President & Chief Executive Officer",
+    href: "/group-president-biography",
+  },
+  {
+    name: "Damilola Agboola",
+    role: "CFO / Treasurer",
+    href: "/leadership/damilola-agboola",
+  },
+  {
+    name: "Suleiman Olawale",
+    role: "Chief of Staff",
+    href: "/leadership/suleiman-olawale",
+  },
+  {
+    name: "Peace James",
+    role: "Group General Manager",
+    href: "/leadership/peace-james",
+  },
+  {
+    name: "Aramide Olugbenga Wyse",
+    role: "Group Human Resource",
+    href: "/leadership/aramide-olugbenga-wyse",
+  },
+  {
+    name: "Engr Wale",
+    role: "President & Chief Executive",
+    href: "/leadership/engr-wale",
+  },
 ];
 
 const historyPanels = [
   {
     title: "Foundation and Focus",
-    text:
-      "Vertmance was built on a simple idea: create durable value through practical execution, patient capital, and disciplined partnerships. The company began by aligning operating businesses with long-term stewardship instead of short-term wins.",
+    text: "Vertmance was built on a simple idea: create durable value through practical execution, patient capital, and disciplined partnerships. The company began by aligning operating businesses with long-term stewardship instead of short-term wins.",
     align: "text-left",
   },
   {
     title: "Group Expansion",
-    text:
-      "As the group grew, each business unit was shaped around clear accountability, sharper delivery standards, and a common operating rhythm. That structure keeps the wider portfolio aligned while still letting each unit move with precision.",
+    text: "As the group grew, each business unit was shaped around clear accountability, sharper delivery standards, and a common operating rhythm. That structure keeps the wider portfolio aligned while still letting each unit move with precision.",
     align: "text-right",
   },
   {
     title: "Strategy for the Future",
-    text:
-      "Our strategy is centered on controlled expansion, resilient operations, and leadership depth. The aim is not just to participate in markets, but to build a group that can outperform with consistency across cycles.",
+    text: "Our strategy is centered on controlled expansion, resilient operations, and leadership depth. The aim is not just to participate in markets, but to build a group that can outperform with consistency across cycles.",
     align: "text-left",
   },
 ];
@@ -44,11 +65,15 @@ function NavLink({
     <Link
       to={to}
       className={`text-sm tracking-wide transition-all duration-200 py-2 relative ${
-        active ? "font-bold text-[#121212]" : "font-medium text-[#6c6861] hover:text-[#121212]"
+        active
+          ? "font-bold text-[#121212]"
+          : "font-medium text-[#6c6861] hover:text-[#121212]"
       }`}
     >
       {label}
-      {active ? <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#e57a00]" /> : null}
+      {active ? (
+        <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#e57a00]" />
+      ) : null}
     </Link>
   );
 }
@@ -188,7 +213,10 @@ export default function AboutUsScreen() {
               Nurturing a Vision
             </h1>
             <p className="mx-auto mt-5 max-w-4xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
-              Vertmance is built to create steady, long-term value across its operating businesses. We focus on disciplined leadership, durable systems, and practical execution so that each segment of the group can grow with clarity and consistency.
+              Vertmance is built to create steady, long-term value across its
+              operating businesses. We focus on disciplined leadership, durable
+              systems, and practical execution so that each segment of the group
+              can grow with clarity and consistency.
             </p>
           </div>
         </section>
@@ -204,12 +232,18 @@ export default function AboutUsScreen() {
               <h2 className="mt-4 text-[1.8rem] font-black leading-[1.02] tracking-[-0.05em] text-[#191715] sm:text-[2.35rem]">
                 Michael Olubusayo Oluwagbemi, FMVR
               </h2>
-              <p className="mt-2 text-xs font-medium uppercase tracking-[0.2em] text-[#7d7871]">
+              <Link
+                to="/group-president-biography"
+                className="mt-2 inline-block text-xs font-medium uppercase tracking-[0.2em] text-[#7d7871] transition-colors hover:text-[#ef7b11]"
+              >
                 President &amp; Chief Executive Officer
-              </p>
+              </Link>
               <div className="mt-4 h-px w-full bg-[#51493f]" />
               <p className="mt-5 max-w-xl text-[0.84rem] leading-7 text-[#7d7871] sm:text-sm">
-                Vertmance is led with a hands-on approach that values structure, accountability, and measurable progress. The group is designed to build strong operating businesses while keeping a sharp eye on sustainable growth and execution quality.
+                Vertmance is led with a hands-on approach that values structure,
+                accountability, and measurable progress. The group is designed
+                to build strong operating businesses while keeping a sharp eye
+                on sustainable growth and execution quality.
               </p>
               <Link
                 to="/#business"
@@ -233,7 +267,9 @@ export default function AboutUsScreen() {
               </h2>
               <div className="mx-auto mt-3 h-[2px] w-24 bg-[#ef7b11]" />
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#7d7871]">
-                A leadership group organized to keep strategy, operations, finance, and people aligned across the wider Vertmance portfolio.
+                A leadership group organized to keep strategy, operations,
+                finance, and people aligned across the wider Vertmance
+                portfolio.
               </p>
             </div>
 
@@ -242,9 +278,12 @@ export default function AboutUsScreen() {
                 <article key={person.name} className="group">
                   <div className="h-[220px] rounded-[2px] bg-[#dedede] transition-transform duration-300 group-hover:-translate-y-1" />
                   <div className="px-2 pb-2 pt-4 text-center">
-                    <h3 className="text-[0.82rem] font-bold leading-5 text-[#151312]">
+                    <Link
+                      to={person.href}
+                      className="text-[0.82rem] font-bold leading-5 text-[#151312] transition-colors hover:text-[#ef7b11]"
+                    >
                       {person.name}
-                    </h3>
+                    </Link>
                     <p className="mt-1 text-[0.7rem] uppercase tracking-[0.18em] text-[#8b857d]">
                       {person.role}
                     </p>
@@ -274,9 +313,19 @@ export default function AboutUsScreen() {
                       reverse ? "lg:[&>*:first-child]:order-2" : ""
                     }`}
                   >
-                    <div className={panel.align === "text-right" ? "order-1 lg:text-right" : "order-1"}>
+                    <div
+                      className={
+                        panel.align === "text-right"
+                          ? "order-1 lg:text-right"
+                          : "order-1"
+                      }
+                    >
                       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8f897f]">
-                        {index === 0 ? "Origins" : index === 1 ? "Structure" : "Direction"}
+                        {index === 0
+                          ? "Origins"
+                          : index === 1
+                            ? "Structure"
+                            : "Direction"}
                       </p>
                       <h3 className="mt-2 text-[1.6rem] font-black tracking-[-0.05em] text-[#171412] sm:text-[2rem]">
                         {panel.title}
@@ -303,17 +352,26 @@ export default function AboutUsScreen() {
               </h3>
               <ul className="mt-5 space-y-3 text-sm">
                 <li>
-                  <Link className="transition-colors hover:text-white" to="/about-us">
+                  <Link
+                    className="transition-colors hover:text-white"
+                    to="/about-us"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link className="transition-colors hover:text-white" to="/#business">
+                  <Link
+                    className="transition-colors hover:text-white"
+                    to="/#business"
+                  >
                     Business
                   </Link>
                 </li>
                 <li>
-                  <Link className="transition-colors hover:text-white" to="/portfolio">
+                  <Link
+                    className="transition-colors hover:text-white"
+                    to="/portfolio"
+                  >
                     Portfolio
                   </Link>
                 </li>
@@ -396,18 +454,30 @@ export default function AboutUsScreen() {
           <div className="mt-12 flex flex-col gap-4 border-t border-white/15 pt-4 text-xs text-[#b6a894] sm:flex-row sm:items-center sm:justify-between">
             <p>© 2026 All Rights Reserved.</p>
             <div className="flex flex-wrap gap-6">
-                  <button type="button" className="transition-colors hover:text-white">
-                    Legal
-                  </button>
-                  <button type="button" className="transition-colors hover:text-white">
-                    Privacy
-                  </button>
-                  <button type="button" className="transition-colors hover:text-white">
-                    Site Map
-                  </button>
-                  <button type="button" className="transition-colors hover:text-white">
-                    Terms &amp; Condition
-                  </button>
+              <button
+                type="button"
+                className="transition-colors hover:text-white"
+              >
+                Legal
+              </button>
+              <button
+                type="button"
+                className="transition-colors hover:text-white"
+              >
+                Privacy
+              </button>
+              <button
+                type="button"
+                className="transition-colors hover:text-white"
+              >
+                Site Map
+              </button>
+              <button
+                type="button"
+                className="transition-colors hover:text-white"
+              >
+                Terms &amp; Condition
+              </button>
             </div>
           </div>
         </div>

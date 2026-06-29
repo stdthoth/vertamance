@@ -419,12 +419,12 @@ export default function FoodHospitalityScreen() {
               </div>
 
               {/* Action Button */}
-              <button
-                onClick={() => setContactModalOpen(true)}
-                className="bg-[#e55a00] hover:bg-[#cc5000] text-white px-8 py-3 rounded-md font-bold text-sm tracking-wide transition-all hover:scale-[1.01] active:scale-95 w-full shadow-md shadow-orange-500/5 cursor-pointer"
+              <Link
+                to="/xsky-cafe-lounge"
+                className="bg-[#e55a00] hover:bg-[#cc5000] text-white px-8 py-3 rounded-md font-bold text-sm tracking-wide transition-all hover:scale-[1.01] active:scale-95 w-full shadow-md shadow-orange-500/5 cursor-pointer text-center block"
               >
                 Visit Xsky Website
-              </button>
+              </Link>
             </div>
 
             {/* Card 2: OWONIKOKO Ranch & Farms */}

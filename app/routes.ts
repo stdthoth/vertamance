@@ -6,5 +6,8 @@ export default [
   route("portfolio", "routes/portfolio.tsx"),
   route("portfolio/:slug", "routes/portfolio-project.tsx"),
   route("food-hospitality", "routes/food-hospitality.tsx"),
+  route("xsky-cafe-lounge", "routes/xsky-cafe-lounge.tsx"),
+  route("group-president-biography", "routes/group-president-biography.tsx"),
+  route("leadership/:slug", "routes/leadership.$slug.tsx"),
   route("engineering-construction", "routes/engineering-construction.tsx"),
 ] satisfies RouteConfig;
