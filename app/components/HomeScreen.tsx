@@ -12,6 +12,7 @@ export default function HomeScreen() {
   // Navigation active state
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [businessMenuOpen, setBusinessMenuOpen] = useState(false);
 
   // Hero Slider state
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -98,9 +99,29 @@ export default function HomeScreen() {
   const navItems = [
     { kind: "scroll" as const, id: "home", label: "Home" },
     { kind: "route" as const, to: "/about-us", label: "About Us" },
-    { kind: "scroll" as const, id: "business", label: "Business" },
+    { kind: "menu" as const, label: "Business" },
     { kind: "route" as const, to: "/portfolio", label: "Portfolio" },
   ];
+
+  const businessMenuItems = [
+    { label: "Pro Explorer Peak", to: "/pro-explorer-peak" },
+    { label: "Vertmance engineering", to: "/engineering-construction" },
+    {
+      label: "Owonikoko Ranch\nManagement Institute",
+      to: "/business/owonikoko-ranch-management-institute",
+    },
+    { label: "Oke-Keke", to: "/portfolio/oke-keke" },
+    { label: "Xsky Entertainment", to: "/xsky-cafe-lounge" },
+    {
+      label: "Owonikoko Ranch & Farms",
+      to: "/portfolio/owonikoko-ranch-farm-initiatives",
+    },
+  ];
+
+  const toggleBusinessMenu = () => {
+    setMobileMenuOpen(false);
+    setBusinessMenuOpen((open) => !open);
+  };
 
   // Smooth scroll helper
   const scrollToSection = (id: string) => {
@@ -139,47 +160,59 @@ export default function HomeScreen() {
       <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           {/* Logo */}
-          <div
-            className="flex items-center"
-            onClick={() => scrollToSection("home")}
-          >
-            <div className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200">
-              <img
-                src="/Vertmance logo.png"
-                alt="Vertmance Logo"
-                className="w-full h-full object-contain"
+              <div className="flex items-center" onClick={() => scrollToSection("home")}>
+                <div className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200">
+                  <img
+                    src="/Vertmance logo.png"
+                    alt="Vertmance Logo"
+                    className="w-full h-full object-contain"
               />
             </div>
           </div>
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-10">
-            {navItems.map((link) =>
-              link.kind === "route" ? (
-                <Link
-                  key={link.label}
-                  to={link.to}
-                  className="text-sm tracking-wide font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 py-2"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className={`text-sm tracking-wide transition-all duration-200 relative py-2 ${
-                    activeSection === link.id
+              {navItems.map((link) =>
+                link.kind === "route" ? (
+                  <Link
+                    key={link.label}
+                    to={link.to}
+                    className="text-sm tracking-wide font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 py-2"
+                  >
+                    {link.label}
+                  </Link>
+                ) : link.kind === "scroll" ? (
+                  <button
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
+                    className={`text-sm tracking-wide transition-all duration-200 relative py-2 ${
+                      activeSection === link.id
                       ? "font-bold text-gray-900"
                       : "font-medium text-gray-500 hover:text-gray-900"
                   }`}
-                >
-                  {link.label}
-                  {activeSection === link.id && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
-                  )}
-                </button>
-              ),
-            )}
+                  >
+                    {link.label}
+                    {activeSection === link.id && (
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
+                    )}
+                  </button>
+                ) : (
+                  <button
+                    key={link.label}
+                    onClick={toggleBusinessMenu}
+                    className={`text-sm tracking-wide transition-all duration-200 relative py-2 ${
+                      businessMenuOpen
+                        ? "font-bold text-gray-900"
+                        : "font-medium text-gray-500 hover:text-gray-900"
+                    }`}
+                  >
+                    {link.label}
+                    {businessMenuOpen && (
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
+                    )}
+                  </button>
+                ),
+              )}
           </div>
 
           {/* Contact Us button */}
@@ -235,12 +268,24 @@ export default function HomeScreen() {
                 >
                   {link.label}
                 </Link>
-              ) : (
+              ) : link.kind === "scroll" ? (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
                   className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
                     activeSection === link.id
+                      ? "font-bold bg-orange-50 text-[#e55a00]"
+                      : "font-medium text-gray-600 hover:bg-gray-50"
+                  }`}
+                  >
+                    {link.label}
+                  </button>
+              ) : (
+                <button
+                  key={link.label}
+                  onClick={toggleBusinessMenu}
+                  className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
+                    businessMenuOpen
                       ? "font-bold bg-orange-50 text-[#e55a00]"
                       : "font-medium text-gray-600 hover:bg-gray-50"
                   }`}
@@ -258,6 +303,33 @@ export default function HomeScreen() {
             >
               Contact Us
             </button>
+          </div>
+        )}
+
+        {/* Business Flyout */}
+        {businessMenuOpen && (
+          <div
+            className="fixed inset-0 z-50"
+            onClick={() => setBusinessMenuOpen(false)}
+            aria-hidden="true"
+          >
+            <div className="absolute left-1/2 top-[88px] w-[min(500px,calc(100vw-2rem))] -translate-x-1/2 rounded-[22px] border border-white/40 bg-white/55 p-4 shadow-[0_18px_42px_rgba(0,0,0,0.10)] backdrop-blur-xl sm:p-5">
+              <div
+                className="grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {businessMenuItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    onClick={() => setBusinessMenuOpen(false)}
+                    className="rounded-xl px-3 py-2 text-[0.9rem] font-semibold leading-5 text-[#121212] transition-colors hover:bg-white/70 hover:text-[#e55a00] sm:text-[0.95rem]"
+                  >
+                    <span className="whitespace-pre-line">{item.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </nav>

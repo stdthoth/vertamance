@@ -9,5 +9,7 @@ export default [
   route("xsky-cafe-lounge", "routes/xsky-cafe-lounge.tsx"),
   route("group-president-biography", "routes/group-president-biography.tsx"),
   route("leadership/:slug", "routes/leadership.$slug.tsx"),
+  route("business/:slug", "routes/business.$slug.tsx"),
+  route("pro-explorer-peak", "routes/pro-explorer-peak.tsx"),
   route("engineering-construction", "routes/engineering-construction.tsx"),
 ] satisfies RouteConfig;
