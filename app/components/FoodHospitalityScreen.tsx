@@ -546,53 +546,72 @@ export default function FoodHospitalityScreen() {
               {nassacoCardOpen && (
                 <div
                   id="nassaco-subsidiary-card"
-                  className="min-w-0 animate-subsidiarySlideOut"
+                  className="min-w-0 bg-white border border-gray-150/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group animate-subsidiarySlideOut"
                 >
-                  <div className="h-full bg-white rounded-2xl p-2 shadow-md shadow-gray-200/70 border border-gray-100 flex flex-col">
-                    <div className="relative h-64 bg-[#d9d9d9] rounded-t-2xl overflow-hidden flex items-end p-5">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-                      <h3 className="relative z-10 text-white text-sm font-extrabold">
+                  <div>
+                    {/* Asset Placeholder */}
+                    <div className="w-full h-64 bg-gray-100 rounded-xl mb-8 flex flex-col items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/55 to-transparent z-10" />
+                      <div className="absolute inset-y-0 right-12 w-20 bg-stone-800/5 -skew-x-6" />
+                      <span className="text-gray-400 font-extrabold tracking-widest uppercase text-xs select-none relative z-20">
+                        Nassaco Farm Asset
+                      </span>
+                    </div>
+
+                    {/* Typography Block */}
+                    <div className="space-y-1 mb-4">
+                      <div className="font-serif italic font-bold text-gray-400 text-[17px] uppercase tracking-widest">
                         Nassaco
-                      </h3>
+                      </div>
+                      <div className="text-stone-800 text-xs font-bold tracking-widest uppercase">
+                        Farms
+                      </div>
                     </div>
 
-                    <div className="flex-1 px-5 pt-4 pb-2">
-                      <p className="text-gray-600 text-sm leading-relaxed mb-7">
-                        The foundation of our quality. Owonikoko is a center of
-                        excellence for sustainable crop production, modern
-                        livestock and agricultural education.
-                      </p>
+                    {/* Description */}
+                    <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
+                      The foundation of our quality. Nassaco supports
+                      sustainable crop production, modern livestock operations,
+                      and practical agricultural development.
+                    </p>
 
-                      <ul className="space-y-4">
-                        <li className="flex items-center gap-3">
-                          <span className="w-5 h-5 flex items-center justify-center text-base">
-                            🌾
-                          </span>
-                          <span className="text-xs font-medium text-gray-500">
-                            Sustainable Crop Production
-                          </span>
-                        </li>
-                        <li className="flex items-center gap-3">
-                          <span className="w-5 h-5 flex items-center justify-center text-base">
-                            🐂
-                          </span>
-                          <span className="text-xs font-medium text-gray-500">
-                            Premium Livestock Farming
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="p-5 pt-8">
-                      <button
-                        type="button"
-                        onClick={() => setContactModalOpen(true)}
-                        className="w-full bg-[#24190e] hover:bg-[#332315] text-white py-3.5 rounded-md text-xs font-extrabold transition-all hover:scale-[1.01] active:scale-95 cursor-pointer"
-                      >
-                        Visit Nassaco Farm
-                      </button>
-                    </div>
+                    {/* List Items */}
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-sm">
+                          🌾
+                        </span>
+                        <span className="text-sm font-semibold text-gray-700">
+                          Sustainable Crop Production
+                        </span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-sm">
+                          🐂
+                        </span>
+                        <span className="text-sm font-semibold text-gray-700">
+                          Premium Livestock Farming
+                        </span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-sm">
+                          🎓
+                        </span>
+                        <span className="text-sm font-semibold text-gray-700">
+                          Agricultural Training &amp; Farm Visits
+                        </span>
+                      </li>
+                    </ul>
                   </div>
+
+                  {/* Action Button */}
+                  <button
+                    type="button"
+                    onClick={() => setContactModalOpen(true)}
+                    className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-md font-bold text-sm tracking-wide transition-all hover:scale-[1.01] active:scale-95 w-full shadow-md shadow-stone-500/5 cursor-pointer"
+                  >
+                    Visit Nassaco Farm
+                  </button>
                 </div>
               )}
             </div>
