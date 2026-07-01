@@ -106,7 +106,7 @@ export default function HomeScreen() {
 
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
-    setBusinessMenuOpen((open) => !open);
+    setBusinessMenuOpen(true);
   };
 
   // Smooth scroll helper

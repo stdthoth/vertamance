@@ -5,13 +5,13 @@ export const businessNavItems = [
   { label: "Vertmance engineering", to: "/engineering-construction" },
   {
     label: "Owonikoko Ranch\nManagement Institute",
-    to: "/business/owonikoko-ranch-management-institute",
+    to: "/owonikoko-ranch-farms/enroll",
   },
-  { label: "Oke-Keke", to: "/portfolio/oke-keke" },
+  { label: "Oke-Keke", to: "/oke-keke" },
   { label: "Xsky Entertainment", to: "/xsky-cafe-lounge" },
   {
     label: "Owonikoko Ranch & Farms",
-    to: "/portfolio/owonikoko-ranch-farm-initiatives",
+    to: "/owonikoko-ranch-farms",
   },
 ];
 

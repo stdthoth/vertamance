@@ -42,7 +42,7 @@ export default function PresidentBiographyScreen() {
 
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
-    setBusinessMenuOpen((open) => !open);
+    setBusinessMenuOpen(true);
   };
 
   useEffect(() => {

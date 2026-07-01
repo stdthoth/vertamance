@@ -78,7 +78,7 @@ export default function EngineeringConstructionScreen() {
 
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
-    setBusinessMenuOpen((open) => !open);
+    setBusinessMenuOpen(true);
   };
 
   const visibleProjects = Array.from({ length: 3 }, (_, offset) => {

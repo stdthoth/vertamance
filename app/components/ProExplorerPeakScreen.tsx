@@ -59,7 +59,7 @@ export default function ProExplorerPeakScreen() {
 
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
-    setBusinessMenuOpen((open) => !open);
+    setBusinessMenuOpen(true);
   };
 
   useEffect(() => {

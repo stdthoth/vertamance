@@ -102,7 +102,7 @@ export default function ContactUsScreen() {
             </Link>
             <button
               type="button"
-              onClick={() => setBusinessMenuOpen((open) => !open)}
+              onClick={() => setBusinessMenuOpen(true)}
               className="flex items-center gap-2 text-base font-semibold text-[#7b7b7b] transition-colors hover:text-[#111111]"
             >
               <NavIcon active={businessMenuOpen}>

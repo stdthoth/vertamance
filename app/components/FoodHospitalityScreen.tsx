@@ -58,7 +58,7 @@ export default function FoodHospitalityScreen() {
 
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
-    setBusinessMenuOpen((open) => !open);
+    setBusinessMenuOpen(true);
   };
 
   return (
@@ -534,12 +534,12 @@ export default function FoodHospitalityScreen() {
               </div>
 
               {/* Action Button */}
-              <button
-                onClick={() => setContactModalOpen(true)}
-                className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-md font-bold text-sm tracking-wide transition-all hover:scale-[1.01] active:scale-95 w-full shadow-md shadow-stone-500/5 cursor-pointer"
+              <Link
+                to="/owonikoko-ranch-farms"
+                className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-md font-bold text-sm tracking-wide transition-all hover:scale-[1.01] active:scale-95 w-full shadow-md shadow-stone-500/5 cursor-pointer text-center block"
               >
                 Explore the Farm
-              </button>
+              </Link>
             </div>
 
               {/* Card 3: Nassaco Farm */}
@@ -605,13 +605,12 @@ export default function FoodHospitalityScreen() {
                   </div>
 
                   {/* Action Button */}
-                  <button
-                    type="button"
-                    onClick={() => setContactModalOpen(true)}
-                    className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-md font-bold text-sm tracking-wide transition-all hover:scale-[1.01] active:scale-95 w-full shadow-md shadow-stone-500/5 cursor-pointer"
+                  <Link
+                    to="/nassaco-commodity"
+                    className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-md font-bold text-sm tracking-wide transition-all hover:scale-[1.01] active:scale-95 w-full shadow-md shadow-stone-500/5 cursor-pointer text-center block"
                   >
                     Visit Nassaco Farm
-                  </button>
+                  </Link>
                 </div>
               )}
             </div>

@@ -23,7 +23,7 @@ export default function XskyCafeLoungeScreen() {
 
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
-    setBusinessMenuOpen((open) => !open);
+    setBusinessMenuOpen(true);
   };
 
   useEffect(() => {

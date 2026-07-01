@@ -116,7 +116,7 @@ export default function LeadershipProfileScreen() {
 
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
-    setBusinessMenuOpen((open) => !open);
+    setBusinessMenuOpen(true);
   };
 
   useEffect(() => {
