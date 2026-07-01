@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
+import { BusinessFlyout } from "./BusinessFlyout";
 
 // Types for components
 interface Slide {
@@ -103,21 +104,6 @@ export default function HomeScreen() {
     { kind: "route" as const, to: "/portfolio", label: "Portfolio" },
   ];
 
-  const businessMenuItems = [
-    { label: "Pro Explorer Peak", to: "/pro-explorer-peak" },
-    { label: "Vertmance engineering", to: "/engineering-construction" },
-    {
-      label: "Owonikoko Ranch\nManagement Institute",
-      to: "/business/owonikoko-ranch-management-institute",
-    },
-    { label: "Oke-Keke", to: "/portfolio/oke-keke" },
-    { label: "Xsky Entertainment", to: "/xsky-cafe-lounge" },
-    {
-      label: "Owonikoko Ranch & Farms",
-      to: "/portfolio/owonikoko-ranch-farm-initiatives",
-    },
-  ];
-
   const toggleBusinessMenu = () => {
     setMobileMenuOpen(false);
     setBusinessMenuOpen((open) => !open);
@@ -217,12 +203,12 @@ export default function HomeScreen() {
 
           {/* Contact Us button */}
           <div className="hidden md:block">
-            <button
-              onClick={() => setContactModalOpen(true)}
+            <Link
+              to="/contact-us"
               className="bg-black hover:bg-gray-800 text-white px-6 py-2.5 rounded-sm text-sm font-semibold tracking-wide transition-all duration-200 hover:shadow-lg active:scale-95"
             >
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* Mobile hamburger menu toggle */}
@@ -294,44 +280,20 @@ export default function HomeScreen() {
                 </button>
               ),
             )}
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                setContactModalOpen(true);
-              }}
+            <Link
+              to="/contact-us"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full mt-4 bg-black hover:bg-gray-800 text-white py-3 rounded-md text-sm font-semibold tracking-wide transition-colors"
             >
               Contact Us
-            </button>
+            </Link>
           </div>
         )}
 
-        {/* Business Flyout */}
-        {businessMenuOpen && (
-          <div
-            className="fixed inset-0 z-50"
-            onClick={() => setBusinessMenuOpen(false)}
-            aria-hidden="true"
-          >
-            <div className="absolute left-1/2 top-[88px] w-[min(500px,calc(100vw-2rem))] -translate-x-1/2 rounded-[22px] border border-white/40 bg-white/55 p-4 shadow-[0_18px_42px_rgba(0,0,0,0.10)] backdrop-blur-xl sm:p-5">
-              <div
-                className="grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {businessMenuItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.to}
-                    onClick={() => setBusinessMenuOpen(false)}
-                    className="rounded-xl px-3 py-2 text-[0.9rem] font-semibold leading-5 text-[#121212] transition-colors hover:bg-white/70 hover:text-[#e55a00] sm:text-[0.95rem]"
-                  >
-                    <span className="whitespace-pre-line">{item.label}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+        <BusinessFlyout
+          open={businessMenuOpen}
+          onClose={() => setBusinessMenuOpen(false)}
+        />
       </nav>
 
       {/* 2. HERO SLIDER SECTION */}
@@ -439,8 +401,8 @@ export default function HomeScreen() {
                 tempus leo eu aenean.
               </p>
               <div className="pt-4">
-                <button
-                  onClick={() => scrollToSection("business")}
+                <Link
+                  to="/about-us"
                   className="inline-flex items-center gap-2 bg-[#e55a00] hover:bg-[#cc5000] text-white px-6 py-3 font-semibold rounded-md shadow-md shadow-orange-500/10 transition-all hover:scale-[1.02] active:scale-95"
                 >
                   Learn more
@@ -457,7 +419,7 @@ export default function HomeScreen() {
                       d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                     />
                   </svg>
-                </button>
+                </Link>
               </div>
             </div>
 

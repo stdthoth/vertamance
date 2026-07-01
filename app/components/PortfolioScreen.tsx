@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
 import type { ReactNode } from "react";
+import { BusinessFlyout } from "./BusinessFlyout";
 import { categories, projects, type ProjectCategory } from "./portfolioData";
 
 function NavIcon({
@@ -47,8 +48,14 @@ function NavLink({
 
 export default function PortfolioScreen() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [businessMenuOpen, setBusinessMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("All");
   const [page, setPage] = useState(1);
+
+  const toggleBusinessMenu = () => {
+    setMobileMenuOpen(false);
+    setBusinessMenuOpen((open) => !open);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -76,14 +83,12 @@ export default function PortfolioScreen() {
       <header className="bg-[#dfdfdf]">
         <nav className="sticky top-0 z-40 bg-[#dfdfdf]/90 backdrop-blur-md">
           <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e67a11] shadow-[0_10px_25px_rgba(0,0,0,0.12)]">
-                <img
-                  src="/Vertmance logo.png"
-                  alt="Vertmance Logo"
-                  className="h-12 w-12 object-contain"
-                />
-              </div>
+            <Link to="/" className="flex items-center">
+              <img
+                src="/Vertmance logo.png"
+                alt="Vertmance Logo"
+                className="h-14 w-14 object-contain"
+              />
             </Link>
 
             <div className="hidden items-center gap-8 md:flex">
@@ -131,10 +136,16 @@ export default function PortfolioScreen() {
                   </svg>
                 }
               />
-              <NavLink
-                to="/#business"
-                label="Business"
-                icon={
+              <button
+                type="button"
+                onClick={toggleBusinessMenu}
+                className={`flex items-center gap-2 text-sm tracking-wide transition-colors ${
+                  businessMenuOpen
+                    ? "font-bold text-[#121212]"
+                    : "font-medium text-[#6d6760] hover:text-[#121212]"
+                }`}
+              >
+                <NavIcon active={businessMenuOpen}>
                   <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
                     <path
                       d="M4 19V7.5A1.5 1.5 0 0 1 5.5 6h13A1.5 1.5 0 0 1 20 7.5V19"
@@ -150,8 +161,9 @@ export default function PortfolioScreen() {
                       strokeWidth="1.6"
                     />
                   </svg>
-                }
-              />
+                </NavIcon>
+                <span>Business</span>
+              </button>
               <NavLink
                 to="/portfolio"
                 label="Portfolio"
@@ -177,12 +189,12 @@ export default function PortfolioScreen() {
               />
             </div>
 
-            <a
-              href="mailto:comms@vertmance.com?subject=Vertmance%20Contact"
+            <Link
+              to="/contact-us"
               className="rounded-[4px] bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
 
           {mobileMenuOpen ? (
@@ -202,13 +214,13 @@ export default function PortfolioScreen() {
                 >
                   About Us
                 </Link>
-                <Link
-                  to="/#business"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  type="button"
+                  onClick={toggleBusinessMenu}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-[#6d6760]"
                 >
                   Business
-                </Link>
+                </button>
                 <Link
                   to="/portfolio"
                   onClick={() => setMobileMenuOpen(false)}
@@ -216,15 +228,19 @@ export default function PortfolioScreen() {
                 >
                   Portfolio
                 </Link>
-                <a
-                  href="mailto:comms@vertmance.com?subject=Vertmance%20Contact"
+                <Link
+                  to="/contact-us"
                   className="mt-2 rounded-[4px] bg-black px-4 py-3 text-sm font-semibold text-white"
                 >
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
           ) : null}
+          <BusinessFlyout
+            open={businessMenuOpen}
+            onClose={() => setBusinessMenuOpen(false)}
+          />
         </nav>
 
         <div className="mx-auto max-w-[1280px] px-5 pb-20 pt-12 sm:px-8 lg:px-10 lg:pb-24 lg:pt-16">

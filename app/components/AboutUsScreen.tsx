@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
+import { BusinessFlyout } from "./BusinessFlyout";
 
 const leadership = [
   {
@@ -34,23 +35,8 @@ const leadership = [
   },
 ];
 
-const historyPanels = [
-  {
-    title: "Foundation and Focus",
-    text: "Vertmance was built on a simple idea: create durable value through practical execution, patient capital, and disciplined partnerships. The company began by aligning operating businesses with long-term stewardship instead of short-term wins.",
-    align: "text-left",
-  },
-  {
-    title: "Group Expansion",
-    text: "As the group grew, each business unit was shaped around clear accountability, sharper delivery standards, and a common operating rhythm. That structure keeps the wider portfolio aligned while still letting each unit move with precision.",
-    align: "text-right",
-  },
-  {
-    title: "Strategy for the Future",
-    text: "Our strategy is centered on controlled expansion, resilient operations, and leadership depth. The aim is not just to participate in markets, but to build a group that can outperform with consistency across cycles.",
-    align: "text-left",
-  },
-];
+const historyCopy =
+  "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sapien vitae pellentesque sem placerat in id cursus. Duis convallis tempus leo eu aenean sed diam. Vivamus fringilla lacus nec metus bibendum egestas iaculis. Lacinia integer nunc posuere ut hendrerit semper vel. Sociosqu ad litora torquent per conubia nostra inceptos. Natoque penatibus et magnis dis parturient montes nascetur. Rhoncus eros lobortis nulla molestie mattis scelerisque maximus. Phasellus non purus est efficitur laoreet mauris pharetra. Risus blandit quis suspendisse aliquet nisi sodales consequat. Neque at luctus nibh finibus facilisis dapibus etiam.";
 
 function NavLink({
   to,
@@ -88,6 +74,12 @@ function DecorativeDot() {
 
 export default function AboutUsScreen() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [businessMenuOpen, setBusinessMenuOpen] = useState(false);
+
+  const toggleBusinessMenu = () => {
+    setMobileMenuOpen(false);
+    setBusinessMenuOpen((open) => !open);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -98,30 +90,41 @@ export default function AboutUsScreen() {
       <header className="relative overflow-hidden bg-[#dcdcdc]">
         <nav className="sticky top-0 z-40 border-b border-black/5 bg-[#dcdcdc]/90 backdrop-blur-md">
           <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e67a11] shadow-[0_10px_25px_rgba(0,0,0,0.12)]">
-                <img
-                  src="/Vertmance logo.png"
-                  alt="Vertmance Logo"
-                  className="h-12 w-12 object-contain"
-                />
-              </div>
+            <Link to="/" className="flex items-center">
+              <img
+                src="/Vertmance logo.png"
+                alt="Vertmance Logo"
+                className="h-14 w-14 object-contain"
+              />
             </Link>
 
             <div className="hidden items-center gap-10 md:flex">
               <NavLink to="/" label="Home" />
               <NavLink to="/about-us" label="About Us" active />
-              <NavLink to="/#business" label="Business" />
+              <button
+                type="button"
+                onClick={toggleBusinessMenu}
+                className={`relative py-2 text-sm tracking-wide transition-all duration-200 ${
+                  businessMenuOpen
+                    ? "font-bold text-[#121212]"
+                    : "font-medium text-[#6c6861] hover:text-[#121212]"
+                }`}
+              >
+                Business
+                {businessMenuOpen ? (
+                  <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#e57a00]" />
+                ) : null}
+              </button>
               <NavLink to="/portfolio" label="Portfolio" />
             </div>
 
             <div className="flex items-center gap-3">
-              <a
-                href="mailto:comms@vertmance.com?subject=Vertmance%20Contact"
+              <Link
+                to="/contact-us"
                 className="rounded-[4px] bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 md:block"
               >
                 Contact Us
-              </a>
+              </Link>
 
               <button
                 onClick={() => setMobileMenuOpen((open) => !open)}
@@ -168,13 +171,13 @@ export default function AboutUsScreen() {
                 >
                   About Us
                 </Link>
-                <Link
-                  to="/#business"
+                <button
+                  type="button"
+                  onClick={toggleBusinessMenu}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Business
-                </Link>
+                </button>
                 <Link
                   to="/portfolio"
                   className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
@@ -182,15 +185,19 @@ export default function AboutUsScreen() {
                 >
                   Portfolio
                 </Link>
-                <a
-                  href="mailto:comms@vertmance.com?subject=Vertmance%20Contact"
+                <Link
+                  to="/contact-us"
                   className="mt-2 rounded-[4px] bg-black px-4 py-3 text-sm font-semibold text-white"
                 >
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
           ) : null}
+          <BusinessFlyout
+            open={businessMenuOpen}
+            onClose={() => setBusinessMenuOpen(false)}
+          />
         </nav>
 
         <div className="mx-auto flex min-h-[56vh] max-w-[1280px] items-start px-5 pb-10 pt-16 sm:px-8 lg:px-10 lg:min-h-[64vh] lg:pt-24">
@@ -246,7 +253,7 @@ export default function AboutUsScreen() {
                 on sustainable growth and execution quality.
               </p>
               <Link
-                to="/#business"
+                to="/group-president-biography"
                 className="mt-8 inline-flex items-center gap-3 rounded-sm bg-[#ef7b11] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_22px_rgba(239,123,17,0.18)] transition-transform hover:-translate-y-0.5"
               >
                 Read more
@@ -294,50 +301,38 @@ export default function AboutUsScreen() {
           </div>
         </section>
 
-        <section className="bg-[#f1f1f1] py-16 sm:py-20">
+        <section className="bg-[#f1f1f1] py-14 sm:py-16">
           <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
-            <div className="flex items-center justify-center gap-3">
-              <DecorativeDot />
+            <div className="relative">
+              <div className="absolute left-[24%] top-5 hidden sm:block">
+                <DecorativeDot />
+              </div>
+              <h2 className="text-center text-[2rem] font-black tracking-[-0.05em] text-[#151312] sm:text-[2.65rem]">
+                History &amp; Strategy
+              </h2>
             </div>
-            <h2 className="mt-4 text-center text-[2rem] font-black tracking-[-0.05em] text-[#151312] sm:text-[2.6rem]">
-              History &amp; Strategy
-            </h2>
 
-            <div className="mt-12 space-y-12">
-              {historyPanels.map((panel, index) => {
-                const reverse = index % 2 === 1;
-                return (
-                  <div
-                    key={panel.title}
-                    className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${
-                      reverse ? "lg:[&>*:first-child]:order-2" : ""
-                    }`}
-                  >
-                    <div
-                      className={
-                        panel.align === "text-right"
-                          ? "order-1 lg:text-right"
-                          : "order-1"
-                      }
-                    >
-                      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8f897f]">
-                        {index === 0
-                          ? "Origins"
-                          : index === 1
-                            ? "Structure"
-                            : "Direction"}
-                      </p>
-                      <h3 className="mt-2 text-[1.6rem] font-black tracking-[-0.05em] text-[#171412] sm:text-[2rem]">
-                        {panel.title}
-                      </h3>
-                      <p className="mt-4 max-w-xl text-[0.84rem] leading-7 text-[#7d7871] sm:text-sm">
-                        {panel.text}
-                      </p>
-                    </div>
-                    <div className="h-[240px] rounded-[2px] bg-[#d8d8d8] shadow-[0_10px_28px_rgba(0,0,0,0.04)] sm:h-[300px]" />
-                  </div>
-                );
-              })}
+            <div className="mt-10 space-y-10 sm:mt-12 sm:space-y-12">
+              <div className="grid items-start gap-8 md:grid-cols-2 md:gap-6 lg:gap-12">
+                <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
+                  {historyCopy}
+                </p>
+                <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
+              </div>
+
+              <div className="grid items-start gap-8 md:grid-cols-2 md:gap-6 lg:gap-12">
+                <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
+                <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
+                  {historyCopy}
+                </p>
+              </div>
+
+              <div className="grid items-start gap-8 md:grid-cols-2 md:gap-6 lg:gap-12">
+                <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
+                  {historyCopy}
+                </p>
+                <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
+              </div>
             </div>
           </div>
         </section>

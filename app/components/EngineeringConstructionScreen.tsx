@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { BusinessFlyout } from "./BusinessFlyout";
 
 type FeaturedProject = {
   title: string;
@@ -63,6 +64,7 @@ const footerLinks = [
 
 export default function EngineeringConstructionScreen() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [businessMenuOpen, setBusinessMenuOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [projectIndex, setProjectIndex] = useState(0);
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -73,6 +75,11 @@ export default function EngineeringConstructionScreen() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  const toggleBusinessMenu = () => {
+    setMobileMenuOpen(false);
+    setBusinessMenuOpen((open) => !open);
+  };
 
   const visibleProjects = Array.from({ length: 3 }, (_, offset) => {
     const index = (projectIndex + offset) % featuredProjects.length;
@@ -103,14 +110,12 @@ export default function EngineeringConstructionScreen() {
     <div className="min-h-screen bg-[#f6f4ef] text-[#171412] selection:bg-[#d97706] selection:text-white">
       <nav className="sticky top-0 z-40 border-b border-black/5 bg-[#f6f4ef]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#d97706] text-white shadow-[0_10px_25px_rgba(0,0,0,0.12)]">
-              <img
-                src="/Vertmance logo.png"
-                alt="Vertmance Logo"
-                className="h-12 w-12 object-contain"
-              />
-            </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/Vertmance logo.png"
+              alt="Vertmance Logo"
+              className="h-14 w-14 object-contain"
+            />
           </Link>
 
           <div className="hidden items-center gap-10 md:flex">
@@ -122,12 +127,13 @@ export default function EngineeringConstructionScreen() {
               href="/about-us">
               About Us
             </a>
-            <a
+            <button
+              type="button"
+              onClick={toggleBusinessMenu}
               className="text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
-              href="/#business"
             >
               Business
-            </a>
+            </button>
             <a
               className="text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
               href="/portfolio"
@@ -136,12 +142,12 @@ export default function EngineeringConstructionScreen() {
             </a>
           </div>
 
-          <button
-            onClick={() => setContactModalOpen(true)}
+          <Link
+            to="/contact-us"
             className="hidden rounded-[4px] bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 md:block"
           >
             Contact Us
-          </button>
+          </Link>
 
           <button
             onClick={() => setMobileMenuOpen((open) => !open)}
@@ -185,30 +191,33 @@ export default function EngineeringConstructionScreen() {
               >
                 About Us
               </a>
-              <a
-                href="/#business"
+              <button
+                type="button"
+                onClick={toggleBusinessMenu}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
               >
                 Business
-              </a>
+              </button>
               <a
                 href="/portfolio"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
               >
                 Portfolio
               </a>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setContactModalOpen(true);
-                }}
+              <Link
+                to="/contact-us"
+                onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 rounded-[4px] bg-black px-4 py-3 text-sm font-semibold text-white"
               >
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         ) : null}
+        <BusinessFlyout
+          open={businessMenuOpen}
+          onClose={() => setBusinessMenuOpen(false)}
+        />
       </nav>
 
       <main>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
+import { BusinessFlyout } from "./BusinessFlyout";
 
 export default function FoodHospitalityScreen() {
   // Navigation active state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [businessMenuOpen, setBusinessMenuOpen] = useState(false);
 
   // Video modal state
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -11,6 +13,7 @@ export default function FoodHospitalityScreen() {
   // Contact Us modal state
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [nassacoCardOpen, setNassacoCardOpen] = useState(false);
   const [contactData, setContactData] = useState({
     name: "",
     email: "",
@@ -53,6 +56,11 @@ export default function FoodHospitalityScreen() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  const toggleBusinessMenu = () => {
+    setMobileMenuOpen(false);
+    setBusinessMenuOpen((open) => !open);
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-950 font-sans selection:bg-orange-500 selection:text-white transition-colors duration-300">
       {/* 1. HEADER / NAVBAR */}
@@ -83,13 +91,14 @@ export default function FoodHospitalityScreen() {
             >
               About Us
             </a>
-            <a
-              href="/#business"
+            <button
+              type="button"
+              onClick={toggleBusinessMenu}
               className="text-sm tracking-wide font-bold text-gray-900 transition-all duration-200 py-2 relative"
             >
               Business
               <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
-            </a>
+            </button>
             <a
               href="/portfolio"
               className="text-sm tracking-wide font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 py-2"
@@ -100,12 +109,12 @@ export default function FoodHospitalityScreen() {
 
           {/* Contact Us button */}
           <div className="hidden md:block">
-            <button
-              onClick={() => setContactModalOpen(true)}
+            <Link
+              to="/contact-us"
               className="bg-black hover:bg-gray-800 text-white px-6 py-2.5 rounded-sm text-sm font-semibold tracking-wide transition-all duration-200 hover:shadow-lg active:scale-95 cursor-pointer"
             >
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* Mobile hamburger menu toggle */}
@@ -153,29 +162,32 @@ export default function FoodHospitalityScreen() {
             >
               About Us
             </a>
-            <a
-              href="/#business"
+            <button
+              type="button"
+              onClick={toggleBusinessMenu}
               className="block w-full text-left py-2 px-3 rounded-lg text-sm font-bold bg-orange-50 text-[#e55a00]"
             >
               Business
-            </a>
+            </button>
             <a
               href="/portfolio"
               className="block w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
             >
               Portfolio
             </a>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                setContactModalOpen(true);
-              }}
+            <Link
+              to="/contact-us"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full mt-4 bg-black hover:bg-gray-800 text-white py-3 rounded-md text-sm font-semibold tracking-wide transition-colors"
             >
               Contact Us
-            </button>
+            </Link>
           </div>
         )}
+        <BusinessFlyout
+          open={businessMenuOpen}
+          onClose={() => setBusinessMenuOpen(false)}
+        />
       </nav>
 
       {/* 2. HERO SECTION */}
@@ -357,20 +369,56 @@ export default function FoodHospitalityScreen() {
             </p>
           </div>
 
+          <div className="flex justify-end mb-6">
+            <button
+              type="button"
+              onClick={() => setNassacoCardOpen((open) => !open)}
+              aria-expanded={nassacoCardOpen}
+              aria-controls="nassaco-subsidiary-card"
+              aria-label={
+                nassacoCardOpen
+                  ? "Hide Nassaco subsidiary card"
+                  : "Show Nassaco subsidiary card"
+              }
+              className="h-11 w-16 rounded-full border border-gray-200 bg-white text-stone-900 shadow-sm hover:border-[#e55a00]/50 hover:text-[#e55a00] hover:shadow-md active:scale-95 transition-all duration-200 flex items-center justify-center"
+            >
+              <svg
+                className={`h-5 w-5 transition-transform duration-300 ${
+                  nassacoCardOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 12h16m-6-6 6 6-6 6"
+                />
+              </svg>
+            </button>
+          </div>
+
           {/* Subsidiary Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Card 1: XSKY Restaurant & Lounge */}
-            <div className="bg-white border border-gray-150/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-              <div>
-                {/* Asset Placeholder */}
-                <div className="w-full h-64 bg-gray-100 rounded-xl mb-8 flex flex-col items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/55 to-transparent z-10" />
-                  {/* Subtle graphical layout */}
-                  <div className="absolute inset-y-0 right-10 w-24 bg-[#e55a00]/5 -skew-x-12" />
-                  <span className="text-gray-400 font-extrabold tracking-widest uppercase text-xs select-none relative z-20">
-                    Xsky Restaurant &amp; Lounge Asset
-                  </span>
-                </div>
+          <div className="overflow-hidden">
+            <div
+              className={`grid grid-cols-1 gap-12 transition-all duration-500 ease-out ${
+                nassacoCardOpen ? "lg:grid-cols-3" : "lg:grid-cols-2"
+              }`}
+            >
+              {/* Card 1: XSKY Restaurant & Lounge */}
+              <div className="bg-white border border-gray-150/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div>
+                  {/* Asset Placeholder */}
+                  <div className="w-full h-64 bg-gray-100 rounded-xl mb-8 flex flex-col items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/55 to-transparent z-10" />
+                    {/* Subtle graphical layout */}
+                    <div className="absolute inset-y-0 right-10 w-24 bg-[#e55a00]/5 -skew-x-12" />
+                    <span className="text-gray-400 font-extrabold tracking-widest uppercase text-xs select-none relative z-20">
+                      Xsky Restaurant &amp; Lounge Asset
+                    </span>
+                  </div>
 
                 {/* Typography Block */}
                 <div className="space-y-1 mb-4">
@@ -492,6 +540,61 @@ export default function FoodHospitalityScreen() {
               >
                 Explore the Farm
               </button>
+            </div>
+
+              {/* Card 3: Nassaco Farm */}
+              {nassacoCardOpen && (
+                <div
+                  id="nassaco-subsidiary-card"
+                  className="min-w-0 animate-subsidiarySlideOut"
+                >
+                  <div className="h-full bg-white rounded-2xl p-2 shadow-md shadow-gray-200/70 border border-gray-100 flex flex-col">
+                    <div className="relative h-64 bg-[#d9d9d9] rounded-t-2xl overflow-hidden flex items-end p-5">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+                      <h3 className="relative z-10 text-white text-sm font-extrabold">
+                        Nassaco
+                      </h3>
+                    </div>
+
+                    <div className="flex-1 px-5 pt-4 pb-2">
+                      <p className="text-gray-600 text-sm leading-relaxed mb-7">
+                        The foundation of our quality. Owonikoko is a center of
+                        excellence for sustainable crop production, modern
+                        livestock and agricultural education.
+                      </p>
+
+                      <ul className="space-y-4">
+                        <li className="flex items-center gap-3">
+                          <span className="w-5 h-5 flex items-center justify-center text-base">
+                            🌾
+                          </span>
+                          <span className="text-xs font-medium text-gray-500">
+                            Sustainable Crop Production
+                          </span>
+                        </li>
+                        <li className="flex items-center gap-3">
+                          <span className="w-5 h-5 flex items-center justify-center text-base">
+                            🐂
+                          </span>
+                          <span className="text-xs font-medium text-gray-500">
+                            Premium Livestock Farming
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="p-5 pt-8">
+                      <button
+                        type="button"
+                        onClick={() => setContactModalOpen(true)}
+                        className="w-full bg-[#24190e] hover:bg-[#332315] text-white py-3.5 rounded-md text-xs font-extrabold transition-all hover:scale-[1.01] active:scale-95 cursor-pointer"
+                      >
+                        Visit Nassaco Farm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

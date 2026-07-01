@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
+import { BusinessFlyout } from "./BusinessFlyout";
 
 type LeaderProfile = {
   slug: string;
@@ -109,8 +110,14 @@ function getProfile(slug: string) {
 
 export default function LeadershipProfileScreen() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [businessMenuOpen, setBusinessMenuOpen] = useState(false);
   const params = useParams();
   const profile = getProfile(params.slug ?? "");
+
+  const toggleBusinessMenu = () => {
+    setMobileMenuOpen(false);
+    setBusinessMenuOpen((open) => !open);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -139,20 +146,24 @@ export default function LeadershipProfileScreen() {
             <Link className="text-sm font-bold text-[#121212]" to="/about-us">
               About Us
             </Link>
-            <Link className="text-sm font-medium text-[#6c6861] hover:text-[#121212]" to="/#business">
+            <button
+              type="button"
+              onClick={toggleBusinessMenu}
+              className="text-sm font-medium text-[#6c6861] hover:text-[#121212]"
+            >
               Business
-            </Link>
+            </button>
             <Link className="text-sm font-medium text-[#6c6861] hover:text-[#121212]" to="/portfolio">
               Portfolio
             </Link>
           </div>
 
-          <a
-            href="mailto:comms@vertmance.com?subject=Vertmance%20Contact"
+          <Link
+            to="/contact-us"
             className="hidden rounded-[4px] bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 md:block"
           >
             Contact Us
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -197,27 +208,32 @@ export default function LeadershipProfileScreen() {
               >
                 About Us
               </Link>
-              <Link
-                to="/#business"
+              <button
+                type="button"
+                onClick={toggleBusinessMenu}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
               >
                 Business
-              </Link>
+              </button>
               <Link
                 to="/portfolio"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
               >
                 Portfolio
               </Link>
-              <a
-                href="mailto:comms@vertmance.com?subject=Vertmance%20Contact"
+              <Link
+                to="/contact-us"
                 className="mt-2 rounded-[4px] bg-black px-4 py-3 text-sm font-semibold text-white"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         ) : null}
+        <BusinessFlyout
+          open={businessMenuOpen}
+          onClose={() => setBusinessMenuOpen(false)}
+        />
       </header>
 
       <main>

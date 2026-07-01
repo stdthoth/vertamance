@@ -17,21 +17,19 @@ export default function BusinessComingSoonScreen() {
     <div className="min-h-screen bg-[#f6f4ef] text-[#171412] selection:bg-[#d97706] selection:text-white">
       <header className="border-b border-black/5 bg-[#f6f4ef]">
         <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e67a11] shadow-[0_10px_25px_rgba(0,0,0,0.12)]">
-              <img
-                src="/Vertmance logo.png"
-                alt="Vertmance Logo"
-                className="h-12 w-12 object-contain"
-              />
-            </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/Vertmance logo.png"
+              alt="Vertmance Logo"
+              className="h-14 w-14 object-contain"
+            />
           </Link>
-          <a
-            href="mailto:comms@vertmance.com?subject=Vertmance%20Contact"
+          <Link
+            to="/contact-us"
             className="rounded-[4px] bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </header>
 
