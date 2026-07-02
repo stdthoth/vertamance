@@ -43,7 +43,7 @@ export default function NassacoCommodityScreen() {
           { label: "Home", href: "#home", active: true },
           { label: "Partnership", href: "#partnership" },
           { label: "Silvex", href: "#silvex" },
-          { label: "VAP", href: "#vap" },
+          { label: "VAP", href: "/engineering-construction" },
         ]}
       />
 
@@ -84,9 +84,9 @@ export default function NassacoCommodityScreen() {
               Our Mission
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#8a857e]">
-              To transform Nasarawa State into a premier hub for industrial
-              rice processing through sustainable agriculture, innovative
-              technology, and strategic partnerships.
+              To transform Nasarawa State into a premier hub for industrial rice
+              processing through sustainable agriculture, innovative technology,
+              and strategic partnerships.
             </p>
             <div className="mt-12 grid gap-8 md:grid-cols-3">
               {missionCards.map((card) => (
@@ -135,8 +135,8 @@ export default function NassacoCommodityScreen() {
               <p className="mt-5 max-w-xl text-sm leading-7 text-[#77716a]">
                 As the technical and commercial anchor, VAP brings decades in
                 commodity trading and industrial milling. Their focus is
-                maximizing the value chain from paddy sourcing to premium
-                market distribution.
+                maximizing the value chain from paddy sourcing to premium market
+                distribution.
               </p>
               <ul className="mt-6 space-y-4 text-sm font-bold text-[#df8b24]">
                 <li>⊙ Milling Efficiency Optimization</li>
@@ -224,10 +224,19 @@ export default function NassacoCommodityScreen() {
             <form className="grid gap-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 <FormInput label="Full Name" placeholder="John Doe" />
-                <FormInput label="Email Address" placeholder="john@domain.com" />
+                <FormInput
+                  label="Email Address"
+                  placeholder="john@domain.com"
+                />
               </div>
-              <FormInput label="Interest Area" placeholder="Supply Partnership" />
-              <FormTextarea label="Message" placeholder="Tell us about your project..." />
+              <FormInput
+                label="Interest Area"
+                placeholder="Supply Partnership"
+              />
+              <FormTextarea
+                label="Message"
+                placeholder="Tell us about your project..."
+              />
               <button
                 type="submit"
                 className="rounded-[4px] bg-[#df6f00] px-6 py-3 text-sm font-bold text-white shadow-sm transition-transform hover:-translate-y-0.5"
