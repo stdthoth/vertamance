@@ -36,7 +36,10 @@ const leadership = [
 ];
 
 const historyCopy =
-  "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sapien vitae pellentesque sem placerat in id cursus. Duis convallis tempus leo eu aenean sed diam. Vivamus fringilla lacus nec metus bibendum egestas iaculis. Lacinia integer nunc posuere ut hendrerit semper vel. Sociosqu ad litora torquent per conubia nostra inceptos. Natoque penatibus et magnis dis parturient montes nascetur. Rhoncus eros lobortis nulla molestie mattis scelerisque maximus. Phasellus non purus est efficitur laoreet mauris pharetra. Risus blandit quis suspendisse aliquet nisi sodales consequat. Neque at luctus nibh finibus facilisis dapibus etiam.";
+  "Founded in 2014, Vertmance Resources Limited is an African diversified operating and investment platform committed to transforming bold ideas into sustainable businesses and high-impact projects. Built as a Do It company, we go beyond identifying opportunities we develop innovative business models, mobilise strategic partnerships, attract investment, and execute projects that create lasting value. With expertise spanning agriculture, infrastructure, engineering, real estate, clean mobility, and investment, Vertmance delivers integrated solutions that drive economic growth, job creation, and sustainable development across Africa. Our hands-on approach to project execution and business development enables us to build, operate, and scale ventures that create long-term value for communities, partners, and investors alike.";
+const historyCopy1 = "Driven by a mission to develop job-creating and value-adding projects, Vertmance has grown into a diversified business group operating across agriculture, infrastructure, engineering, real estate, investment, clean mobility, and hospitality. Through strategic partnerships, technical expertise, and innovative business models, we continue to deliver sustainable solutions that support economic growth and national development. Today, Vertmance stands as an African family-owned operating and investment platform, uniting specialised businesses under one integrated ecosystem to build real assets, develop sustainable enterprises, and create long-term value for communities, partners, and future generations."
+
+const historyCopy2 = "From building integrated agricultural platforms through Vertmance Agric Partners and Owonikoko Ranch & Farms to delivering engineering, infrastructure, real estate, clean mobility, and strategic investment solutions, Vertmance continues to transform opportunities into impactful businesses that drive economic growth and sustainable development across Africa. More than a diversified business group, Vertmance is an integrated operating and investment platform built on innovation, strategic partnerships, and disciplined execution. We create businesses that solve real-world challenges, develop critical infrastructure, generate employment, strengthen industries, and deliver long-term value for our partners, investors, and the communities we serve."
 
 function NavLink({
   to,
@@ -247,10 +250,9 @@ export default function AboutUsScreen() {
               </Link>
               <div className="mt-4 h-px w-full bg-[#51493f]" />
               <p className="mt-5 max-w-xl text-[0.84rem] leading-7 text-[#7d7871] sm:text-sm">
-                Vertmance is led with a hands-on approach that values structure,
-                accountability, and measurable progress. The group is designed
-                to build strong operating businesses while keeping a sharp eye
-                on sustainable growth and execution quality.
+                Michael O. Oluwagbemi's is the founder and president/chief executive officer of Vertmance Group.
+                Michael O. Oluwagbemi (PE, PMP, MBA, FNSE) is a Nigerian engineer, entrepreneur, and energy executive currently serving
+                as the Program Director and Chief Executive of the Presidential Compressed Natural Gas (CNG) Initiative.
               </p>
               <Link
                 to="/group-president-biography"
@@ -315,7 +317,7 @@ export default function AboutUsScreen() {
             <div className="mt-10 space-y-10 sm:mt-12 sm:space-y-12">
               <div className="grid items-start gap-8 md:grid-cols-2 md:gap-6 lg:gap-12">
                 <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
-                  {historyCopy}
+                  {historyCopy1}
                 </p>
                 <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
               </div>
@@ -323,7 +325,7 @@ export default function AboutUsScreen() {
               <div className="grid items-start gap-8 md:grid-cols-2 md:gap-6 lg:gap-12">
                 <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
                 <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
-                  {historyCopy}
+                  {historyCopy2}
                 </p>
               </div>
 
