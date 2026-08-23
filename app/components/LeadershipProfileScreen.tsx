@@ -37,9 +37,6 @@ const leaderProfiles: LeaderProfile[] = [
     summary:
       "Chief of staff supporting executive coordination, internal alignment, and operational follow-through.",
     bio: [
-      "Suleiman Olawale helps coordinate executive priorities across the group and keeps internal execution moving on schedule.",
-      "The role is anchored in communication, task ownership, and follow-through across business units.",
-      "His focus is to make sure strategy is translated into action and that leadership stays aligned on timing, priorities, and delivery.",
     ],
     highlights: [
       { title: "Executive Coordination", text: "Keeps leadership priorities synchronized." },
@@ -73,9 +70,10 @@ const leaderProfiles: LeaderProfile[] = [
     summary:
       "HR leader focused on people systems, organizational structure, and workforce development.",
     bio: [
-      "Aramide Olugbenga Wyse supports the people side of the business, helping shape a structure that can scale without losing clarity.",
-      "The function covers workforce management, internal coordination, and policies that support the wider group.",
-      "The emphasis is on building teams with the right structure, the right expectations, and a healthy operating culture.",
+      "Aramide Muinat Olugbenga-Wyse is an experienced Human Resources and Corporate Services professional with over 22 years of work experience, including more than 15 years in Human Resources. She is currently the Group Head, Human Resources & Corporate Services at Vertmance Resources Limited, where she oversees the Group's HR and administrative functions.Before joining Vertmance Resources Limited, Aramide worked in the fertility and reproductive healthcare industry for almost five years, where she played a key role in recruitment and operational coordination while maintaining high professional and ethical standards.",
+
+      "She began her career in the media industry, spending over 10 years at Top Radio 90.9 FM in administrative and editorial roles. That experience helped shape her strong communication, leadership, and organizational skills, which have been valuable throughout her HR career.",
+      "Aramide holds a Bachelor's degree in Mass Communication from the University of Lagos and is an Associate Member of the Chartered Institute of Personnel Management (CIPM) of Nigeria. Over the years, she has developed practical HR systems, supported organizational growth, and helped build strong, people-focused workplaces. She is passionate about developing talent, improving workplace culture, and creating HR practices that support both employees and business success.",
     ],
     highlights: [
       { title: "People Systems", text: "Supports recruitment, structure, and workforce planning." },
