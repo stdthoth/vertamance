@@ -22,7 +22,7 @@ export default function HomeScreen() {
       title1: "From Concept to Delivery.",
       title2: "We Build With Purpose.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Building Sustainable businesses across agriculture, infrastructure, engineering, investments and hospitality throughinnovation. strategic partnerships and operational excellence",
     },
     {
       title1: "Sustainable Infrastructure.",
@@ -394,11 +394,8 @@ export default function HomeScreen() {
                 About Us
               </div>
               <p className="text-gray-700 text-base lg:text-[17px] leading-relaxed font-normal">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex
-                sapien vitae pellentesque sem placerat in id. Placerat in id
-                cursus mi pretium tellus duis. Pretium tellus duis convallis
-                tempus leo eu aenean.
+                Vertmance Resource Limited is an African diversified operating and investment platform that transforms bold ideas into sustainable businesses.
+                Through innovation, strategic partnerships and disciplined execution, we create lasting value across key sectors of the economy.
               </p>
               <div className="pt-4">
                 <Link
@@ -447,9 +444,7 @@ export default function HomeScreen() {
                   Core Principle
                 </div>
                 <p className="text-gray-700 text-base lg:text-[17px] leading-relaxed font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                  Consectetur adipiscing elit quisque faucibus ex sapien vitae.
-                  Ex sapien vitae pellentesque.
+                  Driven by innovation and operational excellence, we transform oppurtunities into sustainable businesses that create long term value.
                 </p>
               </div>
             </div>
@@ -553,7 +548,7 @@ export default function HomeScreen() {
           {/* Header */}
           <div className="space-y-3 mb-16">
             <span className="text-xs font-extrabold tracking-widest text-[#e55a00] uppercase">
-              Why Choose Us
+              WHY PARTNER WITH US
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight max-w-3xl mx-auto">
               ONE GROUP. MULTIPLE SOLUTIONS. PROVEN IMPACT.
@@ -566,7 +561,7 @@ export default function HomeScreen() {
               {
                 title: "Resources Investment & Management",
                 description:
-                  "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
+                  "We identify, structure and manage strategic investments that unlock oppurtunities, maximize resources and create sustainable value across key industries",
                 icon: (
                   <svg
                     className="w-12 h-12 text-gray-950 mx-auto stroke-current"
@@ -585,7 +580,7 @@ export default function HomeScreen() {
               {
                 title: "Project & Business Consultancy",
                 description:
-                  "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
+                  "From concept to implementation , providing practical business advisory project development and execution strategies that transform ideas into successful ventures ",
                 icon: (
                   <svg
                     className="w-12 h-12 text-gray-950 mx-auto stroke-current"
@@ -610,7 +605,7 @@ export default function HomeScreen() {
               {
                 title: "Integrated Livestock & Crops",
                 description:
-                  "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
+                  "Building integrated agricultural value chains through livestock production, crop farming, agribusiness and capacity development.",
                 icon: (
                   <svg
                     className="w-12 h-12 text-gray-950 mx-auto stroke-current"
@@ -635,7 +630,7 @@ export default function HomeScreen() {
               {
                 title: "Engineering & Construction",
                 description:
-                  "Posuere quis sed mauris non curabitur pretium elementum eget. Feugiat sed maecenas eu accumsan tristique.",
+                  "We deliver engineering, construction, renewable energy and infrastructure solutions through experienced teams, strategic partnerships and world class executions",
                 icon: (
                   <svg
                     className="w-12 h-12 text-gray-950 mx-auto stroke-current"
@@ -744,9 +739,7 @@ export default function HomeScreen() {
 
                   {/* News Content Paragraph */}
                   <p className="text-gray-600 text-[13px] leading-relaxed mb-6 font-medium group-hover:text-gray-950 transition-colors">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit
-                    quisque faucibus ex sapien sem placerat in id cursus
-                    mi.Lorem ipsum dolor sit amet consectetur.
+                    Vertmance advances engineering, clean mobility, infrastructure, and investment projects through collaboration, innovation, and disciplined execution.
                   </p>
                 </div>
 
