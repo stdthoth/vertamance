@@ -15,7 +15,7 @@ const leaderProfiles: LeaderProfile[] = [
   {
     slug: "damilola-agboola",
     name: "Damilola Agboola",
-    role: "CFO / Treasurer",
+    role: "Co-Founder and Managing Director(VAP)",
     summary:
       "Finance leader focused on disciplined treasury operations, reporting clarity, and portfolio control.",
     bio: [
@@ -83,21 +83,37 @@ const leaderProfiles: LeaderProfile[] = [
     ],
   },
   {
-    slug: "engr-wale",
-    name: "Engr Wale",
-    role: "President & Chief Executive",
+    slug: "olabisi-bankole",
+    name: "Olabisi Bankole",
+    role: "Managing Partner (VEC)",
     summary:
       "Executive leader with focus on strategy, delivery, and enterprise oversight.",
     bio: [
-      "Engr Wale contributes to group leadership with emphasis on strategic direction and execution discipline.",
-      "His role is tied to keeping ambition practical, ensuring the company moves forward with structure and accountability.",
-      "The leadership approach is centered on clear priorities, operational control, and long-term value creation.",
+      "Olabisi Robert Bankole is a construction and project management professional with experience in quantity surveying, infrastructure development, and project delivery. As Managing Partner of Vertmance Engineering & Construction Limited, he provides strategic leadership, overseeing projects with a focus on quality, efficiency, cost management, and timely delivery.",
+      "He has also held leadership and project management roles across the public and private sectors, including Jomofiro Nigeria Limited and Citec International Estates Limited. His experience covers project planning, contract administration, budgeting, procurement, and construction management.",
+      "Bankole holds a B.Tech in Quantity Surveying from the Federal University of Technology, Akure, and is affiliated with professional bodies including the National Institute of Quantity Surveyors (NIQS) and the Nigerian Institute of Builders (NIOB). He also holds additional training in project management and health, safety, and environmental management."
     ],
     highlights: [
       { title: "Strategic Direction", text: "Supports planning at the enterprise level." },
       { title: "Delivery Focus", text: "Keeps execution aligned with expectations." },
       { title: "Operational Review", text: "Monitors performance and implementation." },
       { title: "Group Oversight", text: "Helps maintain coherence across business lines." },
+    ],
+  },
+  {
+    slug: "timilehin-olowookere",
+    name: "Timilehin Olowookere",
+    role: "Managing Director (Pro-Explorer)",
+    summary:
+      "HR leader focused on people systems, organizational structure, and workforce development.",
+    bio: [
+      "Michael O. Oluwagbemi's is the founder and president/chief executive officer of Vertmance Group.  Michael O. Oluwagbemi (PE, PMP, MBA, FNSE) is a Nigerian engineer, entrepreneur, and energy executive currently serving as the Program Director and Chief Executive of the Presidential Compressed Natural Gas (CNG) Initiative.",
+    ],
+    highlights: [
+      { title: "People Systems", text: "Supports recruitment, structure, and workforce planning." },
+      { title: "Culture", text: "Helps sustain a disciplined but practical workplace environment." },
+      { title: "Organization Design", text: "Keeps roles and responsibilities clear." },
+      { title: "Development", text: "Supports growth through training and internal alignment." },
     ],
   },
 ];
