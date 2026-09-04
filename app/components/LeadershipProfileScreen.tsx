@@ -9,6 +9,7 @@ type LeaderProfile = {
   summary: string;
   bio: string[];
   highlights: { title: string; text: string }[];
+  imageSrc?: string;
 };
 
 const leaderProfiles: LeaderProfile[] = [
@@ -29,6 +30,7 @@ const leaderProfiles: LeaderProfile[] = [
       { title: "Group Oversight", text: "Helps align operating units with financial guardrails." },
       { title: "Risk Discipline", text: "Keeps performance and exposure under close review." },
     ],
+    imageSrc: "/Website jpeg/Untitled (Instagram Post (45)) (13).png",
   },
   {
     slug: "suleiman-olawale",
@@ -44,6 +46,7 @@ const leaderProfiles: LeaderProfile[] = [
       { title: "Communication", text: "Supports internal clarity across teams." },
       { title: "Planning Support", text: "Helps organize the next action across functions." },
     ],
+    imageSrc: "/Website jpeg/olawale.png",
   },
   {
     slug: "aramide-olugbenga-wyse",
@@ -63,6 +66,7 @@ const leaderProfiles: LeaderProfile[] = [
       { title: "Organization Design", text: "Keeps roles and responsibilities clear." },
       { title: "Development", text: "Supports growth through training and internal alignment." },
     ],
+    imageSrc: "/Website jpeg/Aramide.PNG",
   },
   {
     slug: "bankole-olabisi",
@@ -81,6 +85,7 @@ const leaderProfiles: LeaderProfile[] = [
       { title: "Operational Review", text: "Monitors performance and implementation." },
       { title: "Group Oversight", text: "Helps maintain coherence across business lines." },
     ],
+    imageSrc: "/Website jpeg/bankole.png",
   },
   {
     slug: "olowookere-timilehin",
@@ -97,8 +102,26 @@ const leaderProfiles: LeaderProfile[] = [
       { title: "Organization Design", text: "Keeps roles and responsibilities clear." },
       { title: "Development", text: "Supports growth through training and internal alignment." },
     ],
+    imageSrc: "/Website jpeg/olowookere.png",
   },
 ];
+
+function ImageSlot({
+  src,
+  alt,
+}: {
+  src?: string;
+  alt: string;
+}) {
+  return src ? (
+    <img src={src} alt={alt} className="h-full w-full object-cover" />
+  ) : (
+    <div
+      aria-hidden="true"
+      className="h-full w-full bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04))]"
+    />
+  );
+}
 
 function getProfile(slug: string) {
   return leaderProfiles.find((profile) => profile.slug === slug);
@@ -235,7 +258,11 @@ export default function LeadershipProfileScreen() {
       <main>
         <section className="mx-auto max-w-[1280px] px-5 pb-12 pt-10 sm:px-8 lg:px-10 lg:pb-16">
           <div className="grid items-start gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-12">
-            <div className="relative h-[360px] rounded-[20px] bg-[#d9d9d9] shadow-[0_14px_28px_rgba(0,0,0,0.04)] sm:h-[520px] lg:h-[560px]">
+            <div className="relative h-[360px] overflow-hidden rounded-[20px] bg-[#d9d9d9] shadow-[0_14px_28px_rgba(0,0,0,0.04)] sm:h-[520px] lg:h-[560px]">
+              <ImageSlot
+                src={profile.imageSrc}
+                alt={`${profile.name} portrait`}
+              />
               <div className="absolute inset-0 rounded-[20px] border border-[#efdcc0]" />
             </div>
 

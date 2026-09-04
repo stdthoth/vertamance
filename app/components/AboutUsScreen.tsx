@@ -2,36 +2,49 @@ import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import { BusinessFlyout } from "./BusinessFlyout";
 
-const leadership = [
+type LeadershipPerson = {
+  name: string;
+  role: string;
+  href: string;
+  imageSrc?: string;
+};
+
+const leadership: LeadershipPerson[] = [
   {
     name: "Oluwagbemi Michael, FMVR",
     role: "President & Chief Executive Officer",
     href: "/group-president-biography",
+    imageSrc: "/Website jpeg/MO Portrait.png",
   },
   {
     name: "Damilola Agboola",
     role: "Co-Founder",
     href: "/leadership/damilola-agboola",
+    imageSrc: "/Website jpeg/Untitled (Instagram Post (45)) (13).png",
   },
   {
     name: "Suleiman Olawale",
     role: "Chief of Staff",
     href: "/leadership/suleiman-olawale",
+    imageSrc: "/Website jpeg/olawale.png",
   },
   {
     name: "Bankole Olabisi",
     role: "Group General Manager",
     href: "/leadership/bankole-olabisi",
+    imageSrc: "/Website jpeg/bankole.png",
   },
   {
     name: "Aramide Olugbenga Wyse",
     role: "Group Human Resource",
     href: "/leadership/aramide-olugbenga-wyse",
+    imageSrc: "/Website jpeg/Aramide.PNG",
   },
   {
     name: "Olowookere Timilehin",
     role: "Managing Director(Pro-Explorer)",
     href: "/leadership/olowookere-timilehin",
+    imageSrc: "/Website jpeg/olowookere.png",
   },
 ];
 
@@ -40,6 +53,29 @@ const historyCopy =
 const historyCopy1 = "Driven by a mission to develop job-creating and value-adding projects, Vertmance has grown into a diversified business group operating across agriculture, infrastructure, engineering, real estate, investment, clean mobility, and hospitality. Through strategic partnerships, technical expertise, and innovative business models, we continue to deliver sustainable solutions that support economic growth and national development. Today, Vertmance stands as an African family-owned operating and investment platform, uniting specialised businesses under one integrated ecosystem to build real assets, develop sustainable enterprises, and create long-term value for communities, partners, and future generations."
 
 const historyCopy2 = "From building integrated agricultural platforms through Vertmance Agric Partners and Owonikoko Ranch & Farms to delivering engineering, infrastructure, real estate, clean mobility, and strategic investment solutions, Vertmance continues to transform opportunities into impactful businesses that drive economic growth and sustainable development across Africa. More than a diversified business group, Vertmance is an integrated operating and investment platform built on innovation, strategic partnerships, and disciplined execution. We create businesses that solve real-world challenges, develop critical infrastructure, generate employment, strengthen industries, and deliver long-term value for our partners, investors, and the communities we serve."
+
+const historyImageSlots = ["", "", ""];
+
+function ImageSlot({
+  src,
+  alt,
+  className,
+  imageClassName = "h-full w-full object-cover",
+}: {
+  src?: string;
+  alt: string;
+  className?: string;
+  imageClassName?: string;
+}) {
+  return src ? (
+    <img src={src} alt={alt} className={imageClassName} />
+  ) : (
+    <div
+      aria-hidden="true"
+      className={`h-full w-full bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04))] ${className ?? ""}`}
+    />
+  );
+}
 
 function NavLink({
   to,
@@ -204,8 +240,11 @@ export default function AboutUsScreen() {
         </nav>
 
         <div className="mx-auto flex min-h-[56vh] max-w-[1280px] items-start px-5 pb-10 pt-16 sm:px-8 lg:px-10 lg:min-h-[64vh] lg:pt-24">
-          <div className="w-full rounded-[6px] bg-[#dcdcdc]">
-            <div className="min-h-[52vh] rounded-[6px] border border-white/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04))]" />
+          <div className="w-full overflow-hidden rounded-[6px] bg-[#dcdcdc]">
+            <ImageSlot
+              alt="About Vertmance hero image"
+              className="min-h-[60vh] w-full rounded-[6px] border border-white/35"
+            />
           </div>
         </div>
       </header>
@@ -233,7 +272,12 @@ export default function AboutUsScreen() {
 
         <section className="bg-[#dedede] py-14 sm:py-16">
           <div className="mx-auto grid max-w-[1280px] items-center gap-8 px-5 sm:px-8 lg:grid-cols-[0.98fr_1.02fr] lg:gap-14 lg:px-10">
-            <div className="h-[340px] rounded-[2px] border border-white/60 bg-white shadow-[0_12px_30px_rgba(0,0,0,0.05)] sm:h-[390px]" />
+            <div className="h-[420px] overflow-hidden rounded-[2px] border border-white/60 bg-white shadow-[0_12px_30px_rgba(0,0,0,0.05)] sm:h-[480px]">
+              <ImageSlot
+                src="/Website jpeg/MO Portrait.png"
+                alt="Michael Olubusayo Oluwagbemi portrait"
+              />
+            </div>
 
             <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8f897f]">
@@ -285,7 +329,12 @@ export default function AboutUsScreen() {
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {leadership.map((person) => (
                 <article key={person.name} className="group">
-                  <div className="h-[220px] rounded-[2px] bg-[#dedede] transition-transform duration-300 group-hover:-translate-y-1" />
+                  <div className="h-[310px] overflow-hidden rounded-[2px] bg-[#dedede] transition-transform duration-300 group-hover:-translate-y-1 sm:h-[350px]">
+                    <ImageSlot
+                      src={person.imageSrc}
+                      alt={`${person.name} portrait`}
+                    />
+                  </div>
                   <div className="px-2 pb-2 pt-4 text-center">
                     <Link
                       to={person.href}
@@ -319,11 +368,21 @@ export default function AboutUsScreen() {
                 <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
                   {historyCopy1}
                 </p>
-                <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
+                <div className="h-[320px] overflow-hidden bg-[#d8d8d8] md:h-[360px] lg:h-[380px]">
+                  <ImageSlot
+                    src={historyImageSlots[0]}
+                    alt="Vertmance history image 1"
+                  />
+                </div>
               </div>
 
               <div className="grid items-start gap-8 md:grid-cols-2 md:gap-6 lg:gap-12">
-                <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
+                <div className="h-[320px] overflow-hidden bg-[#d8d8d8] md:h-[360px] lg:h-[380px]">
+                  <ImageSlot
+                    src={historyImageSlots[1]}
+                    alt="Vertmance history image 2"
+                  />
+                </div>
                 <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
                   {historyCopy2}
                 </p>
@@ -333,7 +392,12 @@ export default function AboutUsScreen() {
                 <p className="max-w-xl text-[0.86rem] leading-7 text-[#7d7871] sm:text-sm">
                   {historyCopy}
                 </p>
-                <div className="h-[260px] bg-[#d8d8d8] md:h-[300px] lg:h-[312px]" />
+                <div className="h-[320px] overflow-hidden bg-[#d8d8d8] md:h-[360px] lg:h-[380px]">
+                  <ImageSlot
+                    src={historyImageSlots[2]}
+                    alt="Vertmance history image 3"
+                  />
+                </div>
               </div>
             </div>
           </div>
