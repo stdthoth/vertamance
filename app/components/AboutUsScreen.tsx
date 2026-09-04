@@ -18,7 +18,7 @@ const leadership: LeadershipPerson[] = [
   },
   {
     name: "Damilola Agboola",
-    role: "Co-Founder",
+    role: "Co-Founder and Partner",
     href: "/leadership/damilola-agboola",
     imageSrc: "/Website jpeg/Untitled (Instagram Post (45)) (13).png",
   },
@@ -30,7 +30,7 @@ const leadership: LeadershipPerson[] = [
   },
   {
     name: "Bankole Olabisi",
-    role: "Group General Manager",
+    role: "Managing Partner(VEC)",
     href: "/leadership/bankole-olabisi",
     imageSrc: "/Website jpeg/bankole.png",
   },
@@ -327,7 +327,7 @@ export default function AboutUsScreen() {
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {leadership.map((person) => (
                 <article key={person.name} className="group">
-                  <div className="h-[310px] overflow-hidden rounded-[2px] bg-[#dedede] transition-transform duration-300 group-hover:-translate-y-1 sm:h-[350px]">
+                  <div className="h-[330px] overflow-hidden rounded-[2px] bg-[#dedede] transition-transform duration-300 group-hover:-translate-y-1 sm:h-[370px]">
                     <ImageSlot
                       src={person.imageSrc}
                       alt={`${person.name} portrait`}
