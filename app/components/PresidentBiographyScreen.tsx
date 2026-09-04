@@ -167,7 +167,12 @@ export default function PresidentBiographyScreen() {
       <main>
         <section className="mx-auto max-w-[1280px] px-5 pb-12 pt-10 sm:px-8 lg:px-10 lg:pb-16">
           <div className="grid items-start gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-12">
-            <div className="relative h-[360px] rounded-[20px] bg-[#d9d9d9] shadow-[0_14px_28px_rgba(0,0,0,0.04)] sm:h-[520px] lg:h-[560px]">
+            <div className="relative h-[360px] overflow-hidden rounded-[20px] bg-white shadow-[0_14px_28px_rgba(0,0,0,0.04)] sm:h-[520px] lg:h-[560px]">
+              <img
+                src="/Website jpeg/MO Portrait.jpg.jpeg"
+                alt="Michael Olubusayo Oluwagbemi portrait"
+                className="h-full w-full object-contain object-center"
+              />
               <div className="absolute inset-0 rounded-[20px] border border-[#efdcc0]" />
             </div>
 

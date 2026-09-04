@@ -10,7 +10,7 @@ const leadership = [
   },
   {
     name: "Damilola Agboola",
-    role: "CFO / Treasurer",
+    role: "Co-Founder",
     href: "/leadership/damilola-agboola",
   },
   {
@@ -19,9 +19,9 @@ const leadership = [
     href: "/leadership/suleiman-olawale",
   },
   {
-    name: "Peace James",
+    name: "Bankole Olabisi",
     role: "Group General Manager",
-    href: "/leadership/peace-james",
+    href: "/leadership/bankole-olabisi",
   },
   {
     name: "Aramide Olugbenga Wyse",
@@ -29,9 +29,9 @@ const leadership = [
     href: "/leadership/aramide-olugbenga-wyse",
   },
   {
-    name: "Engr Wale",
-    role: "President & Chief Executive",
-    href: "/leadership/engr-wale",
+    name: "Olowookere Timilehin",
+    role: "Managing Director(Pro-Explorer)",
+    href: "/leadership/olowookere-timilehin",
   },
 ];
 

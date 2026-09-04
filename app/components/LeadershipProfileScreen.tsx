@@ -46,24 +46,6 @@ const leaderProfiles: LeaderProfile[] = [
     ],
   },
   {
-    slug: "peace-james",
-    name: "Peace James",
-    role: "Group General Manager",
-    summary:
-      "General manager supporting day-to-day standards, team coordination, and service consistency.",
-    bio: [
-      "Peace James plays a central role in maintaining service quality and consistent operations across the Vertmance portfolio.",
-      "The position focuses on team coordination, standards enforcement, and keeping each operating business aligned with the group ethos.",
-      "Operational consistency matters here: the goal is to preserve quality while keeping delivery practical and responsive.",
-    ],
-    highlights: [
-      { title: "Service Standards", text: "Maintains consistency across customer-facing operations." },
-      { title: "Team Coordination", text: "Aligns day-to-day delivery across departments." },
-      { title: "Quality Control", text: "Tracks operational detail with a practical lens." },
-      { title: "Execution Support", text: "Keeps activity moving with discipline and pace." },
-    ],
-  },
-  {
     slug: "aramide-olugbenga-wyse",
     name: "Aramide Olugbenga Wyse",
     role: "Group Human Resource",
@@ -83,7 +65,7 @@ const leaderProfiles: LeaderProfile[] = [
     ],
   },
   {
-    slug: "olabisi-bankole",
+    slug: "bankole-olabisi",
     name: "Olabisi Bankole",
     role: "Managing Partner (VEC)",
     summary:
@@ -101,7 +83,7 @@ const leaderProfiles: LeaderProfile[] = [
     ],
   },
   {
-    slug: "timilehin-olowookere",
+    slug: "olowookere-timilehin",
     name: "Timilehin Olowookere",
     role: "Managing Director (Pro-Explorer)",
     summary:
