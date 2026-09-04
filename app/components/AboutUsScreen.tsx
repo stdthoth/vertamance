@@ -270,9 +270,9 @@ export default function AboutUsScreen() {
 
         <section className="bg-[#dedede] py-14 sm:py-16">
           <div className="mx-auto grid max-w-[1280px] items-center gap-8 px-5 sm:px-8 lg:grid-cols-[0.98fr_1.02fr] lg:gap-14 lg:px-10">
-            <div className="h-[420px] overflow-hidden rounded-[2px] border border-white/60 bg-white shadow-[0_12px_30px_rgba(0,0,0,0.05)] sm:h-[480px]">
+            <div className="h-[530px] overflow-hidden rounded-[2px] border border-white/60 bg-white shadow-[0_12px_30px_rgba(0,0,0,0.05)] sm:h-[590px]">
               <ImageSlot
-                src="/Website jpeg/MO Portrait.png"
+                src="/Website jpeg/MO Portrait.jpg.jpeg"
                 alt="Michael Olubusayo Oluwagbemi portrait"
               />
             </div>
