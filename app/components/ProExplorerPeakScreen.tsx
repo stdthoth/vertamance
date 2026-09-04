@@ -46,7 +46,7 @@ const disciplines = [
 function ProExplorerLogo() {
   return (
     <img
-      src="/designs/headers/Header(1).png"
+      src="/Vertmance logo.png"
       alt="Pro Explorers Peak Ltd"
       className="h-12 w-auto object-contain"
     />
