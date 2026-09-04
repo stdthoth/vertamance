@@ -143,7 +143,7 @@ export default function HomeScreen() {
   return (
     <div className="min-h-screen bg-white text-gray-950 font-sans selection:bg-orange-500 selection:text-white transition-colors duration-300">
       {/* 1. HEADER / NAVBAR */}
-      <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-colors duration-300">
+      <nav className="business-menu-host sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           {/* Logo */}
               <div className="flex items-center" onClick={() => scrollToSection("home")}>
@@ -183,10 +183,10 @@ export default function HomeScreen() {
                     )}
                   </button>
                 ) : (
-                  <button
+                  <Link
                     key={link.label}
-                    onClick={toggleBusinessMenu}
-                    className={`text-sm tracking-wide transition-all duration-200 relative py-2 ${
+                    to="/portfolio"
+                    className={`business-trigger text-sm tracking-wide transition-all duration-200 relative py-2 ${
                       businessMenuOpen
                         ? "font-bold text-gray-900"
                         : "font-medium text-gray-500 hover:text-gray-900"
@@ -196,7 +196,7 @@ export default function HomeScreen() {
                     {businessMenuOpen && (
                       <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
                     )}
-                  </button>
+                  </Link>
                 ),
               )}
           </div>
@@ -267,17 +267,17 @@ export default function HomeScreen() {
                     {link.label}
                   </button>
               ) : (
-                <button
+                <Link
                   key={link.label}
-                  onClick={toggleBusinessMenu}
-                  className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
+                  to="/portfolio"
+                  className={`business-trigger block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
                     businessMenuOpen
                       ? "font-bold bg-orange-50 text-[#e55a00]"
                       : "font-medium text-gray-600 hover:bg-gray-50"
                   }`}
                 >
                   {link.label}
-                </button>
+                </Link>
               ),
             )}
             <Link

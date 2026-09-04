@@ -47,7 +47,7 @@ export default function ContactUsScreen() {
 
   return (
     <div className="min-h-screen bg-[#f1f1f1] text-[#151515] selection:bg-[#e56f00] selection:text-white">
-      <nav className="sticky top-0 z-40 bg-[#f1f1f1]/95 backdrop-blur-md">
+      <nav className="business-menu-host sticky top-0 z-40 bg-[#f1f1f1]/95 backdrop-blur-md">
         <div className="mx-auto flex h-24 max-w-[1280px] items-center justify-between px-6 lg:px-7">
           <Link to="/" className="flex items-center">
             <img
@@ -100,10 +100,9 @@ export default function ContactUsScreen() {
               </NavIcon>
               About Us
             </Link>
-            <button
-              type="button"
-              onClick={() => setBusinessMenuOpen(true)}
-              className="flex items-center gap-2 text-base font-semibold text-[#7b7b7b] transition-colors hover:text-[#111111]"
+            <Link
+              to="/portfolio"
+              className="business-trigger flex items-center gap-2 text-base font-semibold text-[#7b7b7b] transition-colors hover:text-[#111111]"
             >
               <NavIcon active={businessMenuOpen}>
                 <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
@@ -123,7 +122,7 @@ export default function ContactUsScreen() {
                 </svg>
               </NavIcon>
               Business
-            </button>
+            </Link>
             <Link
               to="/portfolio"
               className="flex items-center gap-2 text-base font-bold text-[#111111]"

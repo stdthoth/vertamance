@@ -126,7 +126,7 @@ export default function AboutUsScreen() {
 
   return (
     <div className="min-h-screen bg-[#ededed] text-[#171412] selection:bg-[#d97706] selection:text-white">
-      <header className="relative overflow-hidden bg-[#dcdcdc]">
+      <header className="business-menu-host relative overflow-hidden bg-[#dcdcdc]">
         <nav className="sticky top-0 z-40 border-b border-black/5 bg-[#dcdcdc]/90 backdrop-blur-md">
           <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
             <Link to="/" className="flex items-center">
@@ -140,10 +140,9 @@ export default function AboutUsScreen() {
             <div className="hidden items-center gap-10 md:flex">
               <NavLink to="/" label="Home" />
               <NavLink to="/about-us" label="About Us" active />
-              <button
-                type="button"
-                onClick={toggleBusinessMenu}
-                className={`relative py-2 text-sm tracking-wide transition-all duration-200 ${
+              <Link
+                to="/portfolio"
+                className={`business-trigger relative py-2 text-sm tracking-wide transition-all duration-200 ${
                   businessMenuOpen
                     ? "font-bold text-[#121212]"
                     : "font-medium text-[#6c6861] hover:text-[#121212]"
@@ -153,7 +152,7 @@ export default function AboutUsScreen() {
                 {businessMenuOpen ? (
                   <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#e57a00]" />
                 ) : null}
-              </button>
+              </Link>
               <NavLink to="/portfolio" label="Portfolio" />
             </div>
 
@@ -210,13 +209,12 @@ export default function AboutUsScreen() {
                 >
                   About Us
                 </Link>
-                <button
-                  type="button"
-                  onClick={toggleBusinessMenu}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
+                <Link
+                  to="/portfolio"
+                  className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
                 >
                   Business
-                </button>
+                </Link>
                 <Link
                   to="/portfolio"
                   className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"

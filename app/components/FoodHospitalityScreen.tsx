@@ -64,7 +64,7 @@ export default function FoodHospitalityScreen() {
   return (
     <div className="min-h-screen bg-white text-gray-950 font-sans selection:bg-orange-500 selection:text-white transition-colors duration-300">
       {/* 1. HEADER / NAVBAR */}
-      <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-colors duration-300">
+      <nav className="business-menu-host sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
@@ -91,14 +91,13 @@ export default function FoodHospitalityScreen() {
             >
               About Us
             </a>
-            <button
-              type="button"
-              onClick={toggleBusinessMenu}
-              className="text-sm tracking-wide font-bold text-gray-900 transition-all duration-200 py-2 relative"
+            <Link
+              to="/portfolio"
+              className="business-trigger text-sm tracking-wide font-bold text-gray-900 transition-all duration-200 py-2 relative"
             >
               Business
               <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e55a00] rounded-full" />
-            </button>
+            </Link>
             <a
               href="/portfolio"
               className="text-sm tracking-wide font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 py-2"
@@ -162,13 +161,12 @@ export default function FoodHospitalityScreen() {
             >
               About Us
             </a>
-            <button
-              type="button"
-              onClick={toggleBusinessMenu}
-              className="block w-full text-left py-2 px-3 rounded-lg text-sm font-bold bg-orange-50 text-[#e55a00]"
+            <Link
+              to="/portfolio"
+              className="business-trigger block w-full text-left py-2 px-3 rounded-lg text-sm font-bold bg-orange-50 text-[#e55a00]"
             >
               Business
-            </button>
+            </Link>
             <a
               href="/portfolio"
               className="block w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"

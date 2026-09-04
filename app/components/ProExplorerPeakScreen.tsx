@@ -68,7 +68,7 @@ export default function ProExplorerPeakScreen() {
 
   return (
     <div className="min-h-screen bg-[#f6f5f3] text-[#171412] selection:bg-[#d97706] selection:text-white">
-      <header className="border-b border-black/5 bg-[#f6f5f3]/95 backdrop-blur-xl">
+      <header className="business-menu-host border-b border-black/5 bg-[#f6f5f3]/95 backdrop-blur-xl">
         <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
           <Link to="/" className="flex items-center">
             <ProExplorerLogo />
@@ -81,13 +81,12 @@ export default function ProExplorerPeakScreen() {
             <Link className="text-sm font-medium text-[#7d7871] hover:text-[#171412]" to="/about-us">
               About Us
             </Link>
-            <button
-              type="button"
-              onClick={toggleBusinessMenu}
-              className="text-sm font-bold text-[#171412]"
+            <Link
+              to="/portfolio"
+              className="business-trigger text-sm font-bold text-[#171412]"
             >
               Business
-            </button>
+            </Link>
             <Link className="text-sm font-medium text-[#7d7871] hover:text-[#171412]" to="/portfolio">
               Portfolio
             </Link>
@@ -143,13 +142,12 @@ export default function ProExplorerPeakScreen() {
               >
                 About Us
               </Link>
-              <button
-                type="button"
-                onClick={toggleBusinessMenu}
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-[#171412]"
-              >
-                Business
-              </button>
+                <Link
+                  to="/portfolio"
+                  className="business-trigger rounded-lg px-3 py-2 text-sm font-semibold text-[#171412]"
+                >
+                  Business
+                </Link>
               <Link
                 to="/portfolio"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#7d7871]"

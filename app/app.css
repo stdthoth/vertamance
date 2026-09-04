@@ -99,3 +99,11 @@ body {
 .animate-subsidiarySlideOut {
   animation: subsidiarySlideOut 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.business-menu-host:has(.business-trigger:hover) .business-flyout,
+.business-menu-host:has(.business-trigger:focus-visible) .business-flyout,
+.business-menu-host:has(.business-flyout:hover) .business-flyout {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}

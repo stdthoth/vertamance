@@ -51,7 +51,7 @@ export default function PresidentBiographyScreen() {
 
   return (
     <div className="min-h-screen bg-[#f4f4f4] text-[#171412] selection:bg-[#d97706] selection:text-white">
-      <header className="sticky top-0 z-40 bg-[#f4f4f4]/90 backdrop-blur-xl">
+      <header className="business-menu-host sticky top-0 z-40 bg-[#f4f4f4]/90 backdrop-blur-xl">
         <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
           <Link to="/" className="flex items-center">
             <img
@@ -71,13 +71,12 @@ export default function PresidentBiographyScreen() {
             <Link className="text-sm font-bold text-[#121212]" to="/about-us">
               About Us
             </Link>
-            <button
-              type="button"
-              onClick={toggleBusinessMenu}
-              className="text-sm font-medium text-[#6c6861] hover:text-[#121212]"
+            <Link
+              to="/portfolio"
+              className="business-trigger text-sm font-medium text-[#6c6861] hover:text-[#121212]"
             >
               Business
-            </button>
+            </Link>
             <Link
               className="text-sm font-medium text-[#6c6861] hover:text-[#121212]"
               to="/portfolio"
@@ -136,13 +135,12 @@ export default function PresidentBiographyScreen() {
               >
                 About Us
               </Link>
-              <button
-                type="button"
-                onClick={toggleBusinessMenu}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
-              >
-                Business
-              </button>
+                <Link
+                  to="/portfolio"
+                  className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
+                >
+                  Business
+                </Link>
               <Link
                 to="/portfolio"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"

@@ -21,7 +21,7 @@ export function BusinessMicrositeNav({
   const [businessMenuOpen, setBusinessMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-black/5 bg-[#f7f6f4]/95 backdrop-blur-xl">
+    <header className="business-menu-host sticky top-0 z-40 border-b border-black/5 bg-[#f7f6f4]/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link to="/" className="flex items-center">
           <img
@@ -34,11 +34,10 @@ export function BusinessMicrositeNav({
         <div className="hidden items-center gap-9 md:flex">
           {items.map((item) =>
             item.label.toLowerCase() === "business" ? (
-              <button
+              <Link
                 key={item.label}
-                type="button"
-                onClick={() => setBusinessMenuOpen(true)}
-                className={`relative py-2 text-sm transition-colors ${
+                to="/portfolio"
+                className={`business-trigger relative py-2 text-sm transition-colors ${
                   item.active
                     ? "font-bold text-[#171412]"
                     : "font-semibold text-[#8c8882] hover:text-[#171412]"
@@ -48,7 +47,7 @@ export function BusinessMicrositeNav({
                 {item.active ? (
                   <span className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#df6f00]" />
                 ) : null}
-              </button>
+              </Link>
             ) : (
               <a
                 key={item.label}

@@ -22,12 +22,13 @@ export function BusinessFlyout({
   open: boolean;
   onClose: () => void;
 }) {
-  if (!open) {
-    return null;
-  }
-
   return (
-    <div className="fixed inset-0 z-50" onClick={onClose}>
+    <div
+      className={`business-flyout fixed inset-0 z-50 transition-[opacity,visibility] duration-200 ${
+        open ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
+      }`}
+      onClick={onClose}
+    >
       <div className="absolute left-1/2 top-[88px] w-[min(500px,calc(100vw-2rem))] -translate-x-1/2 rounded-[22px] border border-white/40 bg-white/55 p-4 shadow-[0_18px_42px_rgba(0,0,0,0.10)] backdrop-blur-xl sm:p-5">
         <div
           className="grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2"

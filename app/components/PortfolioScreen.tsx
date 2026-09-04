@@ -80,7 +80,7 @@ export default function PortfolioScreen() {
 
   return (
     <div className="min-h-screen bg-[#ededed] text-[#171412] selection:bg-[#d97706] selection:text-white">
-      <header className="bg-[#dfdfdf]">
+      <header className="business-menu-host bg-[#dfdfdf]">
         <nav className="sticky top-0 z-40 bg-[#dfdfdf]/90 backdrop-blur-md">
           <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
             <Link to="/" className="flex items-center">
@@ -136,10 +136,9 @@ export default function PortfolioScreen() {
                   </svg>
                 }
               />
-              <button
-                type="button"
-                onClick={toggleBusinessMenu}
-                className={`flex items-center gap-2 text-sm tracking-wide transition-colors ${
+              <Link
+                to="/portfolio"
+                className={`business-trigger flex items-center gap-2 text-sm tracking-wide transition-colors ${
                   businessMenuOpen
                     ? "font-bold text-[#121212]"
                     : "font-medium text-[#6d6760] hover:text-[#121212]"
@@ -161,9 +160,9 @@ export default function PortfolioScreen() {
                       strokeWidth="1.6"
                     />
                   </svg>
-                </NavIcon>
-                <span>Business</span>
-              </button>
+                  </NavIcon>
+                  <span>Business</span>
+              </Link>
               <NavLink
                 to="/portfolio"
                 label="Portfolio"
@@ -214,13 +213,12 @@ export default function PortfolioScreen() {
                 >
                   About Us
                 </Link>
-                <button
-                  type="button"
-                  onClick={toggleBusinessMenu}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-[#6d6760]"
+                <Link
+                  to="/portfolio"
+                  className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6d6760]"
                 >
                   Business
-                </button>
+                </Link>
                 <Link
                   to="/portfolio"
                   onClick={() => setMobileMenuOpen(false)}
@@ -314,10 +312,12 @@ export default function PortfolioScreen() {
                   </p>
                   <Link
                     to={`/portfolio/${project.slug}`}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#171412] transition-colors hover:text-[#e67a11]"
+                    aria-label={`View details for ${project.title}`}
+                    className="mt-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-[#171412] shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#e67a11] hover:text-[#e67a11]"
                   >
-                    View Project Details
-                    <span aria-hidden="true">→</span>
+                    <span aria-hidden="true" className="text-lg leading-none">
+                      →
+                    </span>
                   </Link>
                 </div>
               </article>

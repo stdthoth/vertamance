@@ -127,10 +127,9 @@ export default function ProjectDetailScreen({ project }: { project: Project }) {
             <div className="hidden items-center gap-8 md:flex">
               <DetailNavLink to="/" label="Home" />
               <DetailNavLink to="/about-us" label="About Us" />
-              <button
-                type="button"
-                onClick={toggleBusinessMenu}
-                className={`flex items-center gap-2 text-sm tracking-wide transition-colors ${
+              <Link
+                to="/portfolio"
+                className={`business-trigger flex items-center gap-2 text-sm tracking-wide transition-colors ${
                   businessMenuOpen
                     ? "font-bold text-[#121212]"
                     : "font-medium text-[#6d6760] hover:text-[#121212]"
@@ -158,7 +157,7 @@ export default function ProjectDetailScreen({ project }: { project: Project }) {
                   </svg>
                 </span>
                 <span>Business</span>
-              </button>
+              </Link>
               <DetailNavLink to="/portfolio" label="Portfolio" active />
             </div>
 
@@ -214,13 +213,12 @@ export default function ProjectDetailScreen({ project }: { project: Project }) {
                 >
                   About Us
                 </Link>
-                <button
-                  type="button"
-                  onClick={toggleBusinessMenu}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-[#6d6760]"
+                <Link
+                  to="/portfolio"
+                  className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6d6760]"
                 >
                   Business
-                </button>
+                </Link>
                 <Link
                   to="/portfolio"
                   onClick={() => setMobileMenuOpen(false)}

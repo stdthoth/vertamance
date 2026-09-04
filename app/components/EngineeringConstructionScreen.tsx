@@ -108,7 +108,7 @@ export default function EngineeringConstructionScreen() {
 
   return (
     <div className="min-h-screen bg-[#f6f4ef] text-[#171412] selection:bg-[#d97706] selection:text-white">
-      <nav className="sticky top-0 z-40 border-b border-black/5 bg-[#f6f4ef]/90 backdrop-blur-xl">
+      <nav className="business-menu-host sticky top-0 z-40 border-b border-black/5 bg-[#f6f4ef]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-10">
           <Link to="/" className="flex items-center">
             <img
@@ -127,13 +127,12 @@ export default function EngineeringConstructionScreen() {
               href="/about-us">
               About Us
             </a>
-            <button
-              type="button"
-              onClick={toggleBusinessMenu}
-              className="text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
+            <Link
+              to="/portfolio"
+              className="business-trigger text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
             >
               Business
-            </button>
+            </Link>
             <a
               className="text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
               href="/portfolio"
@@ -191,13 +190,12 @@ export default function EngineeringConstructionScreen() {
               >
                 About Us
               </a>
-              <button
-                type="button"
-                onClick={toggleBusinessMenu}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
-              >
-                Business
-              </button>
+                <Link
+                  to="/portfolio"
+                  className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
+                >
+                  Business
+                </Link>
               <a
                 href="/portfolio"
                 className="rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
