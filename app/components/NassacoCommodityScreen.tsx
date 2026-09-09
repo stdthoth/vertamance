@@ -107,7 +107,11 @@ export default function NassacoCommodityScreen() {
 
         <section id="silvex" className="bg-white py-16 lg:py-20">
           <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:px-10">
-            <Placeholder className="h-[330px] rounded-[6px]" />
+            <img
+              src="/Website jpeg/silvex_int.jpg"
+              alt="Silvex International harvesting operations"
+              className="h-[330px] w-full rounded-[6px] object-cover"
+            />
             <div>
               <h2 className="text-2xl font-black italic tracking-[-0.04em]">
                 Silvex International
@@ -143,7 +147,11 @@ export default function NassacoCommodityScreen() {
                 <li>⊙ Sustainable Soil Management</li>
               </ul>
             </div>
-            <Placeholder className="h-[330px] rounded-[6px]" />
+            <img
+              src="/Website jpeg/stuff.jpg"
+              alt="Vertmance Agric Partner farm operations"
+              className="h-[330px] w-full rounded-[6px] object-cover"
+            />
           </div>
         </section>
 
