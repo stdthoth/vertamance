@@ -67,7 +67,11 @@ export default function OwonikokoRanchScreen() {
 
             <div className="mt-10 grid gap-5 lg:grid-cols-[1.36fr_0.94fr]">
               <article className="overflow-hidden rounded-[12px] bg-white shadow-[0_12px_28px_rgba(0,0,0,0.03)]">
-                <Placeholder className="h-[290px] bg-white" />
+                <img
+                  src="/Website jpeg/wxx.jpeg"
+                  alt="Crop production at Owonikoko Ranch"
+                  className="h-[290px] w-full object-cover"
+                />
                 <div className="grid gap-8 bg-[#e6e6e5] p-8 md:grid-cols-[1fr_auto]">
                   <div>
                     <h3 className="text-lg font-black">Crop Production</h3>
@@ -86,7 +90,11 @@ export default function OwonikokoRanchScreen() {
               </article>
 
               <article className="overflow-hidden rounded-[12px] bg-white shadow-[0_12px_28px_rgba(0,0,0,0.03)]">
-                <Placeholder className="h-[290px] bg-white" />
+                <img
+                  src="/Website jpeg/o.jpeg"
+                  alt="Livestock at Owonikoko Ranch"
+                  className="h-[290px] w-full object-cover"
+                />
                 <div className="grid gap-8 bg-[#e6e6e5] p-8 md:grid-cols-[1fr_auto]">
                   <div>
                     <h3 className="text-lg font-black">Livestock Farming</h3>
