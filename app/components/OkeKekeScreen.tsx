@@ -7,11 +7,11 @@ import {
 } from "./BusinessPageShared";
 
 const principles = [
-  ["01", "Safety", "Compromise-free structural integrity in every vehicle and refueling station."],
-  ["02", "Sustainability", "Leveraging CNG and renewable tech to reduce the national carbon footprint."],
-  ["03", "Affordability", "Ensuring modern transit is accessible to all Nigerian citizens and drivers."],
-  ["04", "Collaboration", "Partnering with government and private sectors for synchronized growth."],
-  ["05", "Innovation", "Constant iteration on fleet technology and infrastructure delivery."],
+  ["01", "Safety", "Safety is our highest priority, guiding every vehicle conversion, infrastructure project, and fleet operations."],
+  ["02", "Sustainability", "Promoting cleaner transportation through CNG technology that reduces emissions and operating costs."],
+  ["03", "Affordability", "Leveraging modern technology to advance Nigeria’s clean mobility ecosystem."],
+  ["04", "Collaboration", "Building trusted partnerships through transparency, accountability, and reliable service delivery."],
+  ["05", "Innovation", "Delivering engineering solutions built on precision, compliance, and industry best practices."],
 ];
 
 const services = [
@@ -37,17 +37,23 @@ export default function OkeKekeScreen() {
       />
 
       <main>
-        <section className="bg-[#d8d8d8]">
-          <div className="mx-auto flex min-h-[520px] max-w-[1280px] items-center px-5 sm:px-8 lg:px-10">
+        <section className="relative overflow-hidden bg-[#d8d8d8]">
+          <img
+            src="/Website jpeg/okekkek.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-25"
+          />
+          <div className="relative z-10 mx-auto flex min-h-[520px] max-w-[1280px] items-center px-5 sm:px-8 lg:px-10">
             <div className="max-w-[440px]">
               <h1 className="text-[2.65rem] font-black leading-[0.95] tracking-[-0.06em] sm:text-[3.65rem]">
-                Redefining
-                <span className="block text-[#df6f00]">Urban Mobility</span>
+                Driving Nigeria's
+                <span className="block text-[#df6f00]">Clean Mobility Future</span>
               </h1>
               <p className="mt-5 text-sm font-semibold leading-6 text-[#77716a]">
-                Engineering a cleaner future through high-efficiency CNG-powered
-                tricycle fleets, integrated maintenance infrastructure, and
-                comprehensive asset security.
+                Accelerating Nigeria's transition to clean transportation through CNG infrastructure,
+                fleet operations, vehicle conversion,
+                and technical training aligned with the Presidential CNG Initiative
               </p>
             </div>
           </div>
@@ -71,16 +77,12 @@ export default function OkeKekeScreen() {
 
             <div className="pt-2 lg:pt-3">
               <h3 className="max-w-2xl text-2xl font-semibold leading-tight tracking-[-0.04em] text-[#3b3733]">
-                OKE KEKE is a forward-thinking infrastructure company dedicated
-                to transforming Nigeria's transportation landscape.
+                OKE KEKE Limited is a Nigerian clean mobility company specializing in CNG infrastructure,
+                vehicle conversion, fleet operations, and technical training.
               </h3>
               <p className="mt-8 max-w-2xl text-sm font-semibold leading-7 text-[#77716a]">
-                We are bridging the gap between traditional transit and modern
-                sustainability. Our approach combines robust engineering with
-                accessible technology, focusing on three core pillars:{" "}
-                <strong className="text-[#171412]">Safety</strong>,{" "}
-                <strong className="text-[#171412]">Sustainability</strong>, and{" "}
-                <strong className="text-[#171412]">Affordability</strong>.
+                As a verified participant in the Presidential CNG Initiative (PCNGI), we are helping accelerate the nation's transition to cleaner, safer,
+                and more affordable transportation solutions.
               </p>
               <div className="mt-8 grid gap-5 sm:grid-cols-2">
                 <div className="bg-white px-8 py-7">
@@ -107,8 +109,8 @@ export default function OkeKekeScreen() {
               <span className="block">Principles</span>
             </h2>
             <p className="max-w-2xl text-xs font-black uppercase leading-6 tracking-[0.18em] text-[#8a857e]">
-              Guided by engineering precision and social responsibility, our
-              values define every infrastructure project we undertake.
+              Our Values shape every project,partnership, and infrastructure solution we deliver,
+              ensuring safety, innovation, and long-term impact.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-5">
@@ -163,7 +165,11 @@ export default function OkeKekeScreen() {
                   </div>
                 ))}
               </div>
-              <Placeholder className="h-[440px]" />
+              <img
+                src="/Website jpeg/magnific_realistic-photograph-of-n_P3igRdO42C.jpg"
+                alt="Market Analysis and Trends maintenance workshop"
+                className="h-[440px] w-full object-cover"
+              />
             </div>
           </div>
         </section>
