@@ -5,7 +5,6 @@ import {
   FormInput,
   FormTextarea,
   OrangeIcon,
-  Placeholder,
 } from "./BusinessPageShared";
 
 const missionCards = [
@@ -161,32 +160,56 @@ export default function NassacoCommodityScreen() {
               Core Pillars of Excellence
             </h2>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              <Placeholder className="flex min-h-[560px] items-end rounded-[4px] p-8">
-                <div>
-                  <h3 className="text-lg font-black">
+              <div className="relative flex min-h-[560px] items-end overflow-hidden rounded-[4px] p-8">
+                <img
+                  src="/Website jpeg/Rice fields.jpg"
+                  alt="Sustainable Crop Production rice fields"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,20,18,0.1)_24%,rgba(23,20,18,0.76))]" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-black text-white">
                     Sustainable Crop Production
                   </h3>
-                  <p className="mt-2 max-w-md text-sm leading-6 text-[#77716a]">
+                  <p className="mt-2 max-w-md text-sm leading-6 text-white/80">
                     Precision-managed cultivation of high-yield rice varieties
                     using eco-friendly input systems.
                   </p>
                 </div>
-              </Placeholder>
+              </div>
               <div className="grid gap-5">
-                {["Aggregation", "Industrial Processing"].map((title) => (
-                  <Placeholder
-                    key={title}
-                    className="flex min-h-[268px] items-end rounded-[4px] p-8"
-                  >
-                    <div>
-                      <h3 className="text-lg font-black">{title}</h3>
-                      <p className="mt-2 max-w-md text-sm leading-6 text-[#77716a]">
-                        Digitized off-take and milling technology achieving
-                        efficiency, purity, and expanded supply.
-                      </p>
-                    </div>
-                  </Placeholder>
-                ))}
+                <div className="relative flex min-h-[268px] items-end overflow-hidden rounded-[4px] p-8">
+                  <img
+                    src="/Website jpeg/download.jpg"
+                    alt="Aggregation rice planting"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,20,18,0.1)_24%,rgba(23,20,18,0.76))]" />
+                  <div className="relative z-10">
+                    <h3 className="text-lg font-black text-white">Aggregation</h3>
+                    <p className="mt-2 max-w-md text-sm leading-6 text-white/80">
+                      Digitized off-take and milling technology achieving
+                      efficiency, purity, and expanded supply.
+                    </p>
+                  </div>
+                </div>
+                <div className="relative flex min-h-[268px] items-end overflow-hidden rounded-[4px] p-8">
+                  <img
+                    src="/Website jpeg/Rice_processing.jpg"
+                    alt="Industrial Processing rice storage"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,20,18,0.1)_24%,rgba(23,20,18,0.76))]" />
+                  <div className="relative z-10">
+                    <h3 className="text-lg font-black text-white">
+                      Industrial Processing
+                    </h3>
+                    <p className="mt-2 max-w-md text-sm leading-6 text-white/80">
+                      Digitized off-take and milling technology achieving
+                      efficiency, purity, and expanded supply.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
