@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import { Link } from "react-router";
 
 const businesses = [
@@ -80,10 +80,24 @@ function NavLink({
 
 export default function BusinessesScreen() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
+
+  const handleNewsletterSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (newsletterEmail.includes("@")) {
+      setNewsletterStatus("success");
+      setNewsletterEmail("");
+      return;
+    }
+    setNewsletterStatus("error");
+  };
 
   return (
     <div className="min-h-screen bg-[#ededed] text-[#171412] selection:bg-[#d97706] selection:text-white">
@@ -146,7 +160,7 @@ export default function BusinessesScreen() {
 
         <div className="relative isolate mx-auto flex min-h-[420px] max-w-[1280px] items-center overflow-hidden px-5 py-20 sm:px-8 lg:min-h-[500px] lg:px-10">
           <img
-            src="/designs/Businesses.png"
+            src="/Website jpeg/new_business.png"
             alt=""
             className="absolute inset-0 -z-20 h-full w-full object-cover"
           />
@@ -205,6 +219,86 @@ export default function BusinessesScreen() {
           </div>
         </section>
       </main>
+
+      <footer className="border-t border-gray-900 bg-[#14110f] px-6 py-20 text-gray-400 transition-colors duration-300 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-12 pb-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            <div className="space-y-4">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white">Company</h4>
+              <ul className="space-y-3 text-sm">
+                <li><Link to="/about-us" className="transition-colors hover:text-white">About Us</Link></li>
+                <li><Link to="/business" className="transition-colors hover:text-white">Business</Link></li>
+                <li><Link to="/portfolio" className="transition-colors hover:text-white">Portfolio</Link></li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white">Businesses</h4>
+              <ul className="space-y-3 text-sm">
+                {businesses.slice(0, 5).map((business) => (
+                  <li key={business.name}>
+                    <Link to={business.href} className="transition-colors hover:text-white">{business.name}</Link>
+                  </li>
+                ))}
+                <li><Link to="/business" className="text-xs font-bold uppercase tracking-wider text-[#e55a00] transition-colors hover:text-white">View all Businesses</Link></li>
+              </ul>
+            </div>
+
+            <div className="space-y-5">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white">General Inquiries</h4>
+              <div className="space-y-2 text-sm leading-relaxed">
+                <p>Call: 0814 XXX XXXX, 0913 XXX XXXX</p>
+                <p>Email: <a href="mailto:comms@vertmance.com" className="transition-colors hover:text-white">comms@vertmance.com</a></p>
+              </div>
+              <div className="flex items-center gap-3 pt-2">
+                {[
+                  { name: "Facebook", label: "f" },
+                  { name: "Twitter", label: "x" },
+                  { name: "Instagram", label: "ig" },
+                ].map((social) => (
+                  <a
+                    key={social.name}
+                    href="#"
+                    aria-label={social.name}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-bold text-gray-400 transition-all hover:scale-105 hover:border-transparent hover:bg-[#e55a00] hover:text-white"
+                  >
+                    {social.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white">Newsletter</h4>
+              <p className="text-sm leading-relaxed text-gray-400">Join our weekly mailing lists</p>
+              <form onSubmit={handleNewsletterSubmit} className="relative mt-2">
+                <input
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(event) => setNewsletterEmail(event.target.value)}
+                  placeholder="Enter Your Email..."
+                  required
+                  className="w-full rounded-sm border border-white/10 bg-[#1e1a17]/80 px-4 py-3 pr-12 text-sm text-white placeholder:text-gray-500 transition-colors focus:border-[#e55a00] focus:outline-none focus:ring-1 focus:ring-[#e55a00]"
+                />
+                <button type="submit" aria-label="Subscribe" className="absolute bottom-1 right-1 top-1 flex w-10 items-center justify-center rounded-sm bg-white/10 text-white transition-colors hover:bg-[#e55a00]">
+                  →
+                </button>
+              </form>
+              {newsletterStatus === "success" ? <p className="text-xs font-semibold text-green-500">You&apos;ve subscribed successfully.</p> : null}
+              {newsletterStatus === "error" ? <p className="text-xs font-semibold text-red-500">Please enter a valid email address.</p> : null}
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
+            <p className="text-xs font-semibold text-gray-500">© 2026 All Rights Reserved</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-gray-500">
+              {['Legal', 'Privacy', 'Site Map', 'Terms & Condition'].map((item) => (
+                <a key={item} href="#" className="transition-colors hover:text-white">{item}</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
