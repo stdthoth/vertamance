@@ -141,7 +141,7 @@ export default function AboutUsScreen() {
               <NavLink to="/" label="Home" />
               <NavLink to="/about-us" label="About Us" active />
               <Link
-                to="/portfolio"
+                to="/business"
                 className={`business-trigger relative py-2 text-sm tracking-wide transition-all duration-200 ${
                   businessMenuOpen
                     ? "font-bold text-[#121212]"
@@ -210,7 +210,7 @@ export default function AboutUsScreen() {
                   About Us
                 </Link>
                 <Link
-                  to="/portfolio"
+                  to="/business"
                   className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
                 >
                   Business

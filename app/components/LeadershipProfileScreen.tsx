@@ -166,7 +166,7 @@ export default function LeadershipProfileScreen() {
               About Us
             </Link>
             <Link
-              to="/portfolio"
+              to="/business"
               className="business-trigger text-sm font-medium text-[#6c6861] hover:text-[#121212]"
             >
               Business
@@ -227,7 +227,7 @@ export default function LeadershipProfileScreen() {
                 About Us
               </Link>
                 <Link
-                  to="/portfolio"
+                  to="/business"
                   className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6c6861]"
                 >
                   Business

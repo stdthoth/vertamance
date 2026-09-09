@@ -92,7 +92,7 @@ export default function FoodHospitalityScreen() {
               About Us
             </a>
             <Link
-              to="/portfolio"
+              to="/business"
               className="business-trigger text-sm tracking-wide font-bold text-gray-900 transition-all duration-200 py-2 relative"
             >
               Business
@@ -162,7 +162,7 @@ export default function FoodHospitalityScreen() {
               About Us
             </a>
             <Link
-              to="/portfolio"
+              to="/business"
               className="business-trigger block w-full text-left py-2 px-3 rounded-lg text-sm font-bold bg-orange-50 text-[#e55a00]"
             >
               Business

@@ -36,7 +36,7 @@ export function BusinessMicrositeNav({
             item.label.toLowerCase() === "business" ? (
               <Link
                 key={item.label}
-                to="/portfolio"
+                to="/business"
                 className={`business-trigger relative py-2 text-sm transition-colors ${
                   item.active
                     ? "font-bold text-[#171412]"

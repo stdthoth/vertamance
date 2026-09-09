@@ -101,7 +101,7 @@ export default function ContactUsScreen() {
               About Us
             </Link>
             <Link
-              to="/portfolio"
+              to="/business"
               className="business-trigger flex items-center gap-2 text-base font-semibold text-[#7b7b7b] transition-colors hover:text-[#111111]"
             >
               <NavIcon active={businessMenuOpen}>

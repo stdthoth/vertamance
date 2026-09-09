@@ -56,7 +56,7 @@ export default function XskyCafeLoungeScreen() {
               About Us
             </Link>
             <Link
-              to="/portfolio"
+              to="/business"
               className="business-trigger text-sm font-bold text-[#171412]"
             >
               Business
@@ -120,7 +120,7 @@ export default function XskyCafeLoungeScreen() {
                 About Us
               </Link>
                 <Link
-                  to="/portfolio"
+                  to="/business"
                   className="business-trigger rounded-lg px-3 py-2 text-sm font-semibold text-[#171412]"
                 >
                   Business

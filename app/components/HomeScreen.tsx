@@ -185,7 +185,7 @@ export default function HomeScreen() {
                 ) : (
                   <Link
                     key={link.label}
-                    to="/portfolio"
+                    to="/business"
                     className={`business-trigger text-sm tracking-wide transition-all duration-200 relative py-2 ${
                       businessMenuOpen
                         ? "font-bold text-gray-900"
@@ -269,7 +269,7 @@ export default function HomeScreen() {
               ) : (
                 <Link
                   key={link.label}
-                  to="/portfolio"
+                  to="/business"
                   className={`business-trigger block w-full text-left py-2 px-3 rounded-lg text-sm transition-all ${
                     businessMenuOpen
                       ? "font-bold bg-orange-50 text-[#e55a00]"

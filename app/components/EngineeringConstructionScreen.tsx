@@ -128,7 +128,7 @@ export default function EngineeringConstructionScreen() {
               About Us
             </a>
             <Link
-              to="/portfolio"
+              to="/business"
               className="business-trigger text-sm font-medium text-[#6c6760] transition-colors hover:text-[#171412]"
             >
               Business
@@ -191,7 +191,7 @@ export default function EngineeringConstructionScreen() {
                 About Us
               </a>
                 <Link
-                  to="/portfolio"
+                  to="/business"
                   className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6c6760]"
                 >
                   Business

@@ -128,7 +128,7 @@ export default function ProjectDetailScreen({ project }: { project: Project }) {
               <DetailNavLink to="/" label="Home" />
               <DetailNavLink to="/about-us" label="About Us" />
               <Link
-                to="/portfolio"
+                to="/business"
                 className={`business-trigger flex items-center gap-2 text-sm tracking-wide transition-colors ${
                   businessMenuOpen
                     ? "font-bold text-[#121212]"
@@ -214,7 +214,7 @@ export default function ProjectDetailScreen({ project }: { project: Project }) {
                   About Us
                 </Link>
                 <Link
-                  to="/portfolio"
+                  to="/business"
                   className="business-trigger rounded-lg px-3 py-2 text-sm font-medium text-[#6d6760]"
                 >
                   Business
