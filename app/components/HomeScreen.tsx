@@ -116,9 +116,10 @@ export default function HomeScreen() {
       category: "Agribusiness",
       title: "Vertmance Agric Partners receives license",
       excerpt:
-        "Vertmance Agric Partners has received its NBTE license to operate its training institution, strengthening our commitment to equipping Nigerianswith practical skills, creating opportunities, and driving sustainable impact.",
+        "Vertmance Agric Partners has received its NBTE license to operate its training institution, strengthening our commitment to equipping Nigerians with practical skills, creating opportunities, and driving sustainable impact.",
       date: "11 Feb, 2026",
-      href: "#news-clean-mobility-expansion",
+      href: "/news/clean-mobility-expansion",
+      image: "/Website jpeg/1st card company news (Home screen).jpeg",
     },
     {
       slug: "engineering-milestone",
@@ -127,7 +128,8 @@ export default function HomeScreen() {
       excerpt:
         "A look at our latest engineering delivery — precision execution, strategic partnerships, and world-class infrastructure.",
       date: "28 Jan, 2026",
-      href: "#news-engineering-milestone",
+      href: "/news/engineering-milestone",
+      image: "/Website jpeg/Engineering and construction(Home screen).jpg",
     },
     {
       slug: "agribusiness-value-chain",
@@ -136,7 +138,8 @@ export default function HomeScreen() {
       excerpt:
         "Inside our integrated agriculture model spanning livestock production, crop farming, and capacity development.",
       date: "15 Jan, 2026",
-      href: "#news-agribusiness-value-chain",
+      href: "/news/agribusiness-value-chain",
+      image: "/Website jpeg/wxx.jpeg",
     },
     {
       slug: "group-investment-update",
@@ -145,7 +148,8 @@ export default function HomeScreen() {
       excerpt:
         "Where Vertmance is deploying capital next — strategic investments that unlock opportunities across key industries.",
       date: "02 Jan, 2026",
-      href: "#news-group-investment-update",
+      href: "/news/group-investment-update",
+      image: "/Website jpeg/Group Investment(Home screen).jpg",
     },
   ];
 
