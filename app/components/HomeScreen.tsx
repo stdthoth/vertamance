@@ -109,6 +109,46 @@ export default function HomeScreen() {
     setBusinessMenuOpen(true);
   };
 
+  // Individual news articles — update href/content per card as pages go live
+  const newsArticles = [
+    {
+      slug: "clean-mobility-expansion",
+      category: "Agribusiness",
+      title: "Vertmance Agric Partners receives license",
+      excerpt:
+        "Vertmance Agric Partners has received its NBTE license to operate its training institution, strengthening our commitment to equipping Nigerianswith practical skills, creating opportunities, and driving sustainable impact.",
+      date: "11 Feb, 2026",
+      href: "#news-clean-mobility-expansion",
+    },
+    {
+      slug: "engineering-milestone",
+      category: "Engineering",
+      title: "Engineering & Construction project milestone",
+      excerpt:
+        "A look at our latest engineering delivery — precision execution, strategic partnerships, and world-class infrastructure.",
+      date: "28 Jan, 2026",
+      href: "#news-engineering-milestone",
+    },
+    {
+      slug: "agribusiness-value-chain",
+      category: "Agribusiness",
+      title: "Building integrated livestock & crop value chains",
+      excerpt:
+        "Inside our integrated agriculture model spanning livestock production, crop farming, and capacity development.",
+      date: "15 Jan, 2026",
+      href: "#news-agribusiness-value-chain",
+    },
+    {
+      slug: "group-investment-update",
+      category: "Investments",
+      title: "Group Investment portfolio update",
+      excerpt:
+        "Where Vertmance is deploying capital next — strategic investments that unlock opportunities across key industries.",
+      date: "02 Jan, 2026",
+      href: "#news-group-investment-update",
+    },
+  ];
+
   // Smooth scroll helper
   const scrollToSection = (id: string) => {
     setActiveSection(id);
@@ -423,17 +463,11 @@ export default function HomeScreen() {
             {/* Right Column: Image Placeholder & Core Principle */}
             <div className="space-y-12">
               {/* Image Placeholder */}
-              <div className="w-full h-80 sm:h-96 bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden group shadow-md shadow-gray-200/5">
-                <div className="absolute inset-0 bg-gradient-to-tr from-gray-300/40 to-transparent" />
-                <span className="text-gray-400 font-semibold tracking-wider uppercase text-sm z-10 select-none group-hover:scale-105 transition-transform duration-300">
-                  Corporate Overview Image
-                </span>
-                {/* Visual decoration corners to make placeholder look premium */}
-                <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-gray-300" />
-                <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-gray-300" />
-                <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-gray-300" />
-                <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-gray-300" />
-              </div>
+              <img
+                src="/Website jpeg/Core principle (Home Screen).jpg"
+                alt="Core Principle"
+                className="h-80 w-full rounded-lg object-cover shadow-md shadow-gray-200/5 sm:h-96"
+              />
 
               {/* Core Principle under the image */}
               <div className="space-y-4">
@@ -474,16 +508,21 @@ export default function HomeScreen() {
             {[
               {
                 title: "Food & Hospitality",
+                imageSrc:
+                  "/Website jpeg/Food & Hospitality(Home Screen).jpg",
                 description:
                   "Our core focus is on livestock and grain/pasture (feedstock) farming, as-well-as developing a workable model built resolve the longstanding security, nutritional, access and safety issues associated with the industry.",
               },
               {
                 title: "Engineering & Construction",
+                imageSrc:
+                  "/Website jpeg/Engineering and construction(Home screen).jpg",
                 description:
                   "Our core focus is on livestock and grain/pasture (feedstock) farming, as-well-as developing a workable model built resolve the longstanding security, nutritional, access and safety issues associated with the industry.",
               },
               {
                 title: "Group Investment",
+                imageSrc: "/Website jpeg/Group Investment(Home screen).jpg",
                 description:
                   "Our core focus is on livestock and grain/pasture (feedstock) farming, as-well-as developing a workable model built resolve the longstanding security, nutritional, access and safety issues associated with the industry.",
               },
@@ -493,13 +532,12 @@ export default function HomeScreen() {
                 className="bg-white border border-gray-200/70 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
-                  {/* Card Image Placeholder */}
-                  <div className="w-full h-48 bg-gray-100 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/50 to-transparent" />
-                    <span className="text-gray-400 font-semibold tracking-wider uppercase text-xs select-none">
-                      {card.title} Asset
-                    </span>
-                  </div>
+                  {/* Card Image */}
+                  <img
+                    src={card.imageSrc}
+                    alt={`${card.title} Asset`}
+                    className="mb-6 h-48 w-full rounded-xl object-cover"
+                  />
 
                   {/* Card Content */}
                   <h3 className="text-xl font-bold text-gray-950 mb-4">
@@ -723,9 +761,10 @@ export default function HomeScreen() {
 
           {/* Cards 4-column row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((item) => (
-              <div
-                key={item}
+            {newsArticles.map((article) => (
+              <Link
+                key={article.slug}
+                to={article.href}
                 className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-gray-200/50 transition-all duration-200 group"
               >
                 <div>
@@ -733,21 +772,24 @@ export default function HomeScreen() {
                   <div className="w-full h-40 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/30 to-transparent" />
                     <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">
-                      News Image Thumbnail
+                      {article.category}
                     </span>
                   </div>
 
-                  {/* News Content Paragraph */}
+                  {/* News Content */}
+                  <h3 className="text-gray-950 text-[15px] font-bold leading-snug mb-2 group-hover:text-[#e55a00] transition-colors">
+                    {article.title}
+                  </h3>
                   <p className="text-gray-600 text-[13px] leading-relaxed mb-6 font-medium group-hover:text-gray-950 transition-colors">
-                    Vertmance advances engineering, clean mobility, infrastructure, and investment projects through collaboration, innovation, and disciplined execution.
+                    {article.excerpt}
                   </p>
                 </div>
 
                 {/* News Date in Bottom Right */}
                 <span className="text-[11px] font-semibold text-gray-400 self-end">
-                  11 Feb, 2026
+                  {article.date}
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
