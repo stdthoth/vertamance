@@ -772,12 +772,13 @@ export default function HomeScreen() {
                 className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-gray-200/50 transition-all duration-200 group"
               >
                 <div>
-                  {/* News Image placeholder */}
-                  <div className="w-full h-40 bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-gray-200/30 to-transparent" />
-                    <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">
-                      {article.category}
-                    </span>
+                  {/* News Image */}
+                  <div className="w-full h-40 rounded-lg mb-4 overflow-hidden relative bg-gray-100">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
                   </div>
 
                   {/* News Content */}

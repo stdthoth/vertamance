@@ -222,72 +222,32 @@ export default function FoodHospitalityScreen() {
             {/* Right Asymmetrical Grid Placeholder */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-4 h-[380px] sm:h-[440px]">
               {/* Tall Left Box */}
-              <div className="relative overflow-hidden rounded-2xl bg-gray-100 border border-gray-200/50 flex flex-col justify-end p-6 group hover:shadow-md transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-                <span className="absolute top-4 left-4 text-[10px] uppercase font-bold tracking-widest text-gray-400">
-                  Premium Dining
-                </span>
-                {/* Subtle graphic lines */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
-                  <svg
-                    className="w-full h-full text-[#e55a00]"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                  >
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="80"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="50"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </div>
-                <div className="relative z-20 text-white">
-                  <h4 className="font-extrabold text-sm tracking-wide uppercase">
-                    Hospitality Excellence
-                  </h4>
-                  <p className="text-[11px] text-gray-200/90 mt-1 font-medium">
-                    Elevating dining with organic inputs.
-                  </p>
-                </div>
+              <div className="relative overflow-hidden rounded-2xl border border-gray-200/50 group hover:shadow-md transition-all duration-300">
+                <img
+                  src="/Website jpeg/38.png"
+                  alt="Hospitality Excellence"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
               </div>
 
               {/* Stacked Right Boxes */}
               <div className="grid grid-rows-2 gap-4 h-full">
                 {/* Top Box */}
-                <div className="relative overflow-hidden rounded-2xl bg-gray-100 border border-gray-200/50 flex flex-col justify-end p-4 group hover:shadow-md transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
-                  <div className="absolute inset-0 bg-[radial-gradient(#e55a0015_1px,transparent_1px)] [background-size:16px_16px]" />
-                  <span className="absolute top-3 left-3 text-[9px] uppercase font-bold tracking-widest text-gray-400">
-                    Owonikoko Ranch
-                  </span>
-                  <div className="relative z-20 text-white">
-                    <h4 className="font-extrabold text-xs tracking-wide uppercase">
-                      Sustainable Farms
-                    </h4>
-                  </div>
+                <div className="relative overflow-hidden rounded-2xl border border-gray-200/50 group hover:shadow-md transition-all duration-300">
+                  <img
+                    src="/Website jpeg/36.png"
+                    alt="Sustainable Farms"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 </div>
 
                 {/* Bottom Box */}
-                <div className="relative overflow-hidden rounded-2xl bg-gray-100 border border-gray-200/50 flex flex-col justify-end p-4 group hover:shadow-md transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
-                  <span className="absolute top-3 left-3 text-[9px] uppercase font-bold tracking-widest text-gray-400">
-                    Xsky Lounge
-                  </span>
-                  <div className="relative z-20 text-white">
-                    <h4 className="font-extrabold text-xs tracking-wide uppercase">
-                      Urban Luxury
-                    </h4>
-                  </div>
+                <div className="relative overflow-hidden rounded-2xl border border-gray-200/50 group hover:shadow-md transition-all duration-300">
+                  <img
+                    src="/Website jpeg/39.png"
+                    alt="Urban Luxury"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -299,19 +259,12 @@ export default function FoodHospitalityScreen() {
       <section className="bg-[#f6f5f2] py-20 lg:py-24 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column: Image Placeholder */}
-            <div className="w-full h-[360px] sm:h-[440px] bg-gray-200 rounded-3xl flex items-center justify-center relative overflow-hidden group shadow-md shadow-gray-200/5">
-              <div className="absolute inset-0 bg-gradient-to-tr from-gray-300/40 to-transparent" />
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#e55a0008_1px,transparent_1px),linear-gradient(to_bottom,#e55a0008_1px,transparent_1px)] bg-[size:32px_32px]" />
-              <span className="text-gray-400 font-extrabold tracking-wider uppercase text-xs z-10 select-none group-hover:scale-105 transition-transform duration-300">
-                Integrated Farm-To-Table Blueprint
-              </span>
-              {/* Visual decoration corners */}
-              <div className="absolute top-6 left-6 w-6 h-6 border-t-2 border-l-2 border-[#e55a00]/30" />
-              <div className="absolute top-6 right-6 w-6 h-6 border-t-2 border-r-2 border-[#e55a00]/30" />
-              <div className="absolute bottom-6 left-6 w-6 h-6 border-b-2 border-l-2 border-[#e55a00]/30" />
-              <div className="absolute bottom-6 right-6 w-6 h-6 border-b-2 border-r-2 border-[#e55a00]/30" />
-            </div>
+            {/* Left Column: Image */}
+            <img
+              src="/Website jpeg/40.png"
+              alt="Integrated Farm-to-Table Hospitality"
+              className="h-[360px] w-full rounded-3xl object-cover shadow-md shadow-gray-200/5 sm:h-[440px]"
+            />
 
             {/* Right Column: About Our Group Content */}
             <div className="space-y-6">
